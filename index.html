@@ -7,8 +7,52 @@
   <title>Caramellê — A Jornada do Copo</title>
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="preloader.css" />
+  <style>#preloader{position:fixed;inset:0;background:#FFE8D8;z-index:1000}</style>
+  <!-- Scripts no head com defer: começam a baixar primeiro (antes das imagens) e executam na ordem, após o HTML -->
+  <link rel="preload" as="image" href="img/logo.png" fetchpriority="high" />
+  <script src="vendor/gsap.min.js" defer></script>
+  <script src="preloader.js" defer></script>
+  <script src="main.js" defer></script>
 </head>
 <body>
+  <div id="preloader" role="status" aria-live="polite" aria-label="Carregando">
+    <div class="preloader-cream">
+      <div class="preloader-center">
+        <div class="preloader-logo">
+          <svg class="preloader-logo-svg" viewBox="0 0 1540 517" aria-hidden="true">
+            <defs>
+              <linearGradient id="preloader-calda-grad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#F29A3E" />
+                <stop offset="50%" stop-color="#DE6E18" />
+                <stop offset="100%" stop-color="#C4570C" />
+              </linearGradient>
+              <filter id="preloader-alpha-white" x="0%" y="0%" width="100%" height="100%">
+                <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0" />
+              </filter>
+              <mask id="preloader-logo-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="1540" height="517" style="mask-type: alpha">
+                <image href="img/logo.png" x="0" y="0" width="1540" height="517" preserveAspectRatio="xMidYMid meet" filter="url(#preloader-alpha-white)" />
+              </mask>
+            </defs>
+            <image class="preloader-logo-ghost" href="img/logo.png" x="0" y="0" width="1540" height="517" preserveAspectRatio="xMidYMid meet" opacity="0.14" />
+            <g mask="url(#preloader-logo-mask)">
+              <path id="preloader-calda-path" fill="url(#preloader-calda-grad)" d="M 0,517 L 1540,517 L 1540,527 L 0,527 Z" />
+            </g>
+          </svg>
+        </div>
+        <div class="preloader-pct-wrap">
+          <div class="preloader-pct-row">
+            <span class="preloader-pct-num" id="preloader-pct">0</span><span class="preloader-pct-sym">%</span>
+          </div>
+          <div class="preloader-bar" aria-hidden="true">
+            <div class="preloader-bar-fill" id="preloader-bar-fill"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="preloader-curtain-back" class="preloader-curtain preloader-curtain-back" aria-hidden="true"></div>
+    <div id="preloader-curtain-front" class="preloader-curtain preloader-curtain-front" aria-hidden="true"></div>
+  </div>
   <div id="viewport">
     <!-- Camada de fundos: ocupa a JANELA INTEIRA (fora do palco), para não haver emenda nem faixa -->
     <div id="bg-stack" aria-hidden="true">
@@ -228,7 +272,7 @@
             <div class="sec4-col sec4-left">
               <div class="sec4-copo-box">
                 <div class="sec4-copo-inner">
-                  <img src="img/copos/tradicional.png" alt="Pudim Caramellê no copo americano" draggable="false" />
+                  <img fetchpriority="low" src="img/copos/tradicional.webp" alt="Pudim Caramellê no copo americano" draggable="false" />
                 </div>
               </div>
               <h3 class="sec4-sub">No copo americano</h3>
@@ -236,7 +280,7 @@
             </div>
             <div class="sec4-col sec4-right">
               <div class="sec4-prato-box">
-                <img class="sec4-prato-img" src="img/pudim-1kg-prato.png" alt="Pudim Caramellê versão 1 kg no prato" draggable="false" />
+                <img class="sec4-prato-img" fetchpriority="low" src="img/pudim-1kg-prato.webp" alt="Pudim Caramellê versão 1 kg no prato" draggable="false" />
               </div>
               <h3 class="sec4-sub">Versão de 1 kg</h3>
               <p class="sec4-desc">Lançada em novembro, para dividir à mesa. Mais pudim, mais cremosidade e a mesma calda irresistível.</p>
@@ -256,14 +300,14 @@
           <div class="sec5-cols">
             <div class="sec5-item sec5-pacoca">
               <div class="sec5-circle">
-                <img src="img/instagram/pacoca.jpg" alt="Pudim de Paçoca Caramellê" draggable="false" />
+                <img fetchpriority="low" src="img/instagram/pacoca.jpg" alt="Pudim de Paçoca Caramellê" draggable="false" />
               </div>
               <h3 class="sec5-name">Paçoca</h3>
               <p class="sec5-desc">A cremosidade do pudim artesanal com o sabor da verdadeira paçoca. Conquista já na primeira colherada.</p>
             </div>
             <div class="sec5-item sec5-cocada">
               <div class="sec5-copo-wrap">
-                <img src="img/copos/cocada.png" alt="Pudim Cocada Cremosa Caramellê" draggable="false" />
+                <img fetchpriority="low" src="img/copos/cocada.webp" alt="Pudim Cocada Cremosa Caramellê" draggable="false" />
               </div>
               <h3 class="sec5-name">Cocada cremosa</h3>
               <p class="sec5-desc">O sabor mais nordestino do São João, com coco preparado artesanalmente.</p>
@@ -425,7 +469,7 @@
           </div>
           <div class="sec9-copo">
             <div class="copo-mouse sec9-copo-mouse">
-              <img src="img/copos/tradicional.png" alt="Pudim Caramellê" draggable="false" />
+              <img fetchpriority="low" src="img/copos/tradicional.webp" alt="Pudim Caramellê" draggable="false" />
             </div>
           </div>
           <div class="sec9-elipse-front">
@@ -492,7 +536,7 @@
           <div class="copo-bob">
             <img
               id="copo-img"
-              src="img/copos/tradicional.png"
+              fetchpriority="low" src="img/copos/tradicional.webp"
               alt="Pudim Caramellê Tradicional no copo americano"
               draggable="false"
             />
@@ -523,7 +567,5 @@
     </main>
   </div>
 
-  <script src="vendor/gsap.min.js"></script>
-  <script src="main.js"></script>
 </body>
 </html>

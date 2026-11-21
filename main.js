@@ -73,7 +73,7 @@
     {
       id: 0,
       nome: "Tradicional",
-      img: "img/copos/tradicional.png",
+      img: "img/copos/tradicional.webp",
       isWide: false,
       textColor: "#F2A55A",
       desktopSize: 280,
@@ -84,17 +84,17 @@
       edicao: "EDIÇÃO FIXA",
       sub: "Calda no ponto e cremosidade perfeita.",
       floats: [
-        { img: "gota-calda.png", layer: "back", dx: 240, dy: 230, mx: 150, my: 430, size: 115, mSize: 82, rot: -16 },
-        { img: "gota-calda.png", layer: "back", dx: 1660, dy: 250, mx: 920, my: 440, size: 125, mSize: 86, rot: 22 },
-        { img: "gota-calda.png", layer: "mid", dx: 450, dy: 720, mx: 210, my: 1210, size: 155, mSize: 108, rot: 14 },
-        { img: "colher.png", layer: "mid", dx: 1480, dy: 680, mx: 865, my: 1180, size: 195, mSize: 130, rot: -26 },
-        { img: "gota-calda.png", layer: "front", dx: 210, dy: 530, mx: 140, my: 930, size: 235, mSize: 145, rot: -20 }
+        { img: "gota-calda.webp", layer: "back", dx: 240, dy: 230, mx: 150, my: 430, size: 115, mSize: 82, rot: -16 },
+        { img: "gota-calda.webp", layer: "back", dx: 1660, dy: 250, mx: 920, my: 440, size: 125, mSize: 86, rot: 22 },
+        { img: "gota-calda.webp", layer: "mid", dx: 450, dy: 720, mx: 210, my: 1210, size: 155, mSize: 108, rot: 14 },
+        { img: "colher.webp", layer: "mid", dx: 1480, dy: 680, mx: 865, my: 1180, size: 195, mSize: 130, rot: -26 },
+        { img: "gota-calda.webp", layer: "front", dx: 210, dy: 530, mx: 140, my: 930, size: 235, mSize: 145, rot: -20 }
       ]
     },
     {
       id: 1,
       nome: "Café",
-      img: "img/copos/cafe.png",
+      img: "img/copos/cafe.webp",
       isWide: false,
       textColor: "#6A2E1B",
       desktopSize: 470,
@@ -105,18 +105,18 @@
       edicao: "EDIÇÃO FIXA",
       sub: "Intenso na medida, cremoso e viciante.",
       floats: [
-        { img: "graos-cafe.png", layer: "back", dx: 250, dy: 230, mx: 150, my: 430, size: 120, mSize: 86, rot: 18 },
-        { img: "graos-cafe.png", layer: "back", dx: 1650, dy: 270, mx: 920, my: 450, size: 110, mSize: 80, rot: -24 },
-        { img: "gota-calda.png", layer: "mid", dx: 430, dy: 740, mx: 210, my: 1215, size: 145, mSize: 102, rot: -12 },
-        { img: "colher.png", layer: "mid", dx: 1510, dy: 690, mx: 870, my: 1180, size: 190, mSize: 126, rot: 28 },
-        { img: "graos-cafe.png", layer: "front", dx: 220, dy: 520, mx: 140, my: 920, size: 240, mSize: 148, rot: -15 },
-        { img: "graos-cafe.png", layer: "front", dx: 1700, dy: 560, mx: 940, my: 940, size: 225, mSize: 136, rot: 26 }
+        { img: "graos-cafe.webp", layer: "back", dx: 250, dy: 230, mx: 150, my: 430, size: 120, mSize: 86, rot: 18 },
+        { img: "graos-cafe.webp", layer: "back", dx: 1650, dy: 270, mx: 920, my: 450, size: 110, mSize: 80, rot: -24 },
+        { img: "gota-calda.webp", layer: "mid", dx: 430, dy: 740, mx: 210, my: 1215, size: 145, mSize: 102, rot: -12 },
+        { img: "colher.webp", layer: "mid", dx: 1510, dy: 690, mx: 870, my: 1180, size: 190, mSize: 126, rot: 28 },
+        { img: "graos-cafe.webp", layer: "front", dx: 220, dy: 520, mx: 140, my: 920, size: 240, mSize: 148, rot: -15 },
+        { img: "graos-cafe.webp", layer: "front", dx: 1700, dy: 560, mx: 940, my: 940, size: 225, mSize: 136, rot: 26 }
       ]
     },
     {
       id: 2,
       nome: "Duo",
-      img: "img/copos/duo.png",
+      img: "img/copos/duo.webp",
       isWide: false,
       textColor: "#FFE8D8",
       desktopSize: 520,
@@ -127,18 +127,18 @@
       edicao: "EDIÇÃO FIXA",
       sub: "Metade chocolate nobre, metade pudim tradicional.",
       floats: [
-        { img: "chocolate.png", layer: "back", dx: 260, dy: 240, mx: 155, my: 435, size: 120, mSize: 86, rot: -20 },
-        { img: "gota-calda.png", layer: "back", dx: 1650, dy: 245, mx: 915, my: 440, size: 112, mSize: 80, rot: 16 },
-        { img: "chocolate.png", layer: "mid", dx: 440, dy: 730, mx: 215, my: 1215, size: 160, mSize: 112, rot: 15 },
-        { img: "colher.png", layer: "mid", dx: 1495, dy: 700, mx: 870, my: 1185, size: 190, mSize: 128, rot: -24 },
-        { img: "chocolate.png", layer: "front", dx: 205, dy: 530, mx: 145, my: 920, size: 235, mSize: 146, rot: 22 },
-        { img: "gota-calda.png", layer: "front", dx: 1700, dy: 540, mx: 935, my: 940, size: 215, mSize: 132, rot: -18 }
+        { img: "chocolate.webp", layer: "back", dx: 260, dy: 240, mx: 155, my: 435, size: 120, mSize: 86, rot: -20 },
+        { img: "gota-calda.webp", layer: "back", dx: 1650, dy: 245, mx: 915, my: 440, size: 112, mSize: 80, rot: 16 },
+        { img: "chocolate.webp", layer: "mid", dx: 440, dy: 730, mx: 215, my: 1215, size: 160, mSize: 112, rot: 15 },
+        { img: "colher.webp", layer: "mid", dx: 1495, dy: 700, mx: 870, my: 1185, size: 190, mSize: 128, rot: -24 },
+        { img: "chocolate.webp", layer: "front", dx: 205, dy: 530, mx: 145, my: 920, size: 235, mSize: 146, rot: 22 },
+        { img: "gota-calda.webp", layer: "front", dx: 1700, dy: 540, mx: 935, my: 940, size: 215, mSize: 132, rot: -18 }
       ]
     },
     {
       id: 3,
       nome: "Morango",
-      img: "img/copos/morango.png",
+      img: "img/copos/morango.webp",
       isWide: true,
       textColor: "#E58AA0",
       desktopSize: 350,
@@ -149,18 +149,18 @@
       edicao: "EDIÇÃO FIXA",
       sub: "Pudim de Ninho com geleia artesanal de morango.",
       floats: [
-        { img: "morango.png", layer: "back", dx: 250, dy: 230, mx: 150, my: 430, size: 125, mSize: 88, rot: -18 },
-        { img: "folha.png", layer: "back", dx: 1655, dy: 255, mx: 920, my: 445, size: 120, mSize: 86, rot: 25 },
-        { img: "morango.png", layer: "mid", dx: 425, dy: 735, mx: 205, my: 1215, size: 165, mSize: 112, rot: 14 },
-        { img: "gota-calda.png", layer: "mid", dx: 1505, dy: 710, mx: 870, my: 1190, size: 108, mSize: 80, rot: -14 },
-        { img: "morango.png", layer: "front", dx: 210, dy: 530, mx: 140, my: 925, size: 235, mSize: 145, rot: 20 },
-        { img: "morango.png", layer: "front", dx: 1705, dy: 525, mx: 940, my: 935, size: 215, mSize: 135, rot: -22 }
+        { img: "morango.webp", layer: "back", dx: 250, dy: 230, mx: 150, my: 430, size: 125, mSize: 88, rot: -18 },
+        { img: "folha.webp", layer: "back", dx: 1655, dy: 255, mx: 920, my: 445, size: 120, mSize: 86, rot: 25 },
+        { img: "morango.webp", layer: "mid", dx: 425, dy: 735, mx: 205, my: 1215, size: 165, mSize: 112, rot: 14 },
+        { img: "gota-calda.webp", layer: "mid", dx: 1505, dy: 710, mx: 870, my: 1190, size: 108, mSize: 80, rot: -14 },
+        { img: "morango.webp", layer: "front", dx: 210, dy: 530, mx: 140, my: 925, size: 235, mSize: 145, rot: 20 },
+        { img: "morango.webp", layer: "front", dx: 1705, dy: 525, mx: 940, my: 935, size: 215, mSize: 135, rot: -22 }
       ]
     },
     {
       id: 4,
       nome: "Nutella",
-      img: "img/copos/nutella.png",
+      img: "img/copos/nutella.webp",
       isWide: false,
       textColor: "#8F4040",
       desktopSize: 390,
@@ -171,18 +171,18 @@
       edicao: "EDIÇÃO FIXA",
       sub: "Muita Nutella. Sem miséria.",
       floats: [
-        { img: "avelas.png", layer: "back", dx: 255, dy: 235, mx: 150, my: 430, size: 120, mSize: 84, rot: 14 },
-        { img: "chocolate.png", layer: "back", dx: 1650, dy: 255, mx: 915, my: 445, size: 118, mSize: 82, rot: -18 },
-        { img: "avelas.png", layer: "mid", dx: 435, dy: 730, mx: 205, my: 1215, size: 165, mSize: 112, rot: -15 },
-        { img: "gota-calda.png", layer: "mid", dx: 1500, dy: 705, mx: 875, my: 1185, size: 140, mSize: 98, rot: 18 },
-        { img: "chocolate.png", layer: "front", dx: 210, dy: 535, mx: 140, my: 925, size: 235, mSize: 146, rot: -20 },
-        { img: "avelas.png", layer: "front", dx: 1700, dy: 530, mx: 940, my: 935, size: 225, mSize: 136, rot: 22 }
+        { img: "avelas.webp", layer: "back", dx: 255, dy: 235, mx: 150, my: 430, size: 120, mSize: 84, rot: 14 },
+        { img: "chocolate.webp", layer: "back", dx: 1650, dy: 255, mx: 915, my: 445, size: 118, mSize: 82, rot: -18 },
+        { img: "avelas.webp", layer: "mid", dx: 435, dy: 730, mx: 205, my: 1215, size: 165, mSize: 112, rot: -15 },
+        { img: "gota-calda.webp", layer: "mid", dx: 1500, dy: 705, mx: 875, my: 1185, size: 140, mSize: 98, rot: 18 },
+        { img: "chocolate.webp", layer: "front", dx: 210, dy: 535, mx: 140, my: 925, size: 235, mSize: 146, rot: -20 },
+        { img: "avelas.webp", layer: "front", dx: 1700, dy: 530, mx: 940, my: 935, size: 225, mSize: 136, rot: 22 }
       ]
     },
     {
       id: 5,
       nome: "Cocada",
-      img: "img/copos/cocada.png",
+      img: "img/copos/cocada.webp",
       isWide: true,
       textColor: "#E3A86B",
       desktopSize: 400,
@@ -193,12 +193,12 @@
       edicao: "EDIÇÃO LIMITADA",
       sub: "O sabor mais nordestino, com coco artesanal.",
       floats: [
-        { img: "coco.png", layer: "back", dx: 245, dy: 235, mx: 150, my: 430, size: 125, mSize: 88, rot: -15 },
-        { img: "folha.png", layer: "back", dx: 1660, dy: 245, mx: 920, my: 440, size: 130, mSize: 90, rot: 20 },
-        { img: "folha.png", layer: "mid", dx: 425, dy: 735, mx: 205, my: 1215, size: 165, mSize: 114, rot: -22 },
-        { img: "coco.png", layer: "mid", dx: 1505, dy: 700, mx: 870, my: 1185, size: 175, mSize: 118, rot: 16 },
-        { img: "coco.png", layer: "front", dx: 205, dy: 530, mx: 140, my: 925, size: 235, mSize: 145, rot: 14 },
-        { img: "folha.png", layer: "front", dx: 1705, dy: 535, mx: 940, my: 935, size: 225, mSize: 138, rot: -24 }
+        { img: "coco.webp", layer: "back", dx: 245, dy: 235, mx: 150, my: 430, size: 125, mSize: 88, rot: -15 },
+        { img: "folha.webp", layer: "back", dx: 1660, dy: 245, mx: 920, my: 440, size: 130, mSize: 90, rot: 20 },
+        { img: "folha.webp", layer: "mid", dx: 425, dy: 735, mx: 205, my: 1215, size: 165, mSize: 114, rot: -22 },
+        { img: "coco.webp", layer: "mid", dx: 1505, dy: 700, mx: 870, my: 1185, size: 175, mSize: 118, rot: 16 },
+        { img: "coco.webp", layer: "front", dx: 205, dy: 530, mx: 140, my: 925, size: 235, mSize: 145, rot: 14 },
+        { img: "folha.webp", layer: "front", dx: 1705, dy: 535, mx: 940, my: 935, size: 225, mSize: 138, rot: -24 }
       ]
     }
   ];
@@ -558,27 +558,27 @@
 
   // Flutuantes da Seção 2 ("O pudim" — gota-calda e colher)
   const pudimFloatSpecs = [
-    { img: "gota-calda.png", layer: "mid", dx: 470, dy: 250, mx: 150, my: 590, size: 118, mSize: 84, rot: -15, ampY: 10, ampR: 5, freq: 1.5, phase: 0.3 },
-    { img: "colher.png", layer: "mid", dx: 950, dy: 250, mx: 920, my: 620, size: 170, mSize: 118, rot: 22, ampY: 9, ampR: 7, freq: 1.35, phase: 1.4 },
-    { img: "gota-calda.png", layer: "mid", dx: 455, dy: 635, mx: 155, my: 1110, size: 138, mSize: 96, rot: 14, ampY: 11, ampR: -6, freq: 1.6, phase: 2.5 },
-    { img: "gota-calda.png", layer: "mid", dx: 960, dy: 730, mx: 925, my: 1095, size: 105, mSize: 78, rot: -12, ampY: 8, ampR: 8, freq: 1.7, phase: 3.7 }
+    { img: "gota-calda.webp", layer: "mid", dx: 470, dy: 250, mx: 150, my: 590, size: 118, mSize: 84, rot: -15, ampY: 10, ampR: 5, freq: 1.5, phase: 0.3 },
+    { img: "colher.webp", layer: "mid", dx: 950, dy: 250, mx: 920, my: 620, size: 170, mSize: 118, rot: 22, ampY: 9, ampR: 7, freq: 1.35, phase: 1.4 },
+    { img: "gota-calda.webp", layer: "mid", dx: 455, dy: 635, mx: 155, my: 1110, size: 138, mSize: 96, rot: 14, ampY: 11, ampR: -6, freq: 1.6, phase: 2.5 },
+    { img: "gota-calda.webp", layer: "mid", dx: 960, dy: 730, mx: 925, my: 1095, size: 105, mSize: 78, rot: -12, ampY: 8, ampR: 8, freq: 1.7, phase: 3.7 }
   ];
 
   const pudimFloatItems = createSectionFloats(pudimFloatsWrap, pudimFloatSpecs);
 
   // Flutuantes da Seção 4 ("Copo e 1 kg") e Seção 5 ("Edição limitada")
   const sec4FloatItems = createSectionFloats(sec4FloatsWrap, [
-    { img: "gota-calda.png", layer: "back", dx: 210, dy: 260, mx: 135, my: 440, size: 110, mSize: 78, rot: -18, ampY: 9, ampR: 5, freq: 1.3, phase: 0.4 },
-    { img: "colher.png", layer: "mid", dx: 1710, dy: 300, mx: 930, my: 480, size: 175, mSize: 116, rot: 24, ampY: 11, ampR: -7, freq: 1.45, phase: 1.8 },
-    { img: "gota-calda.png", layer: "mid", dx: 225, dy: 780, mx: 145, my: 1260, size: 135, mSize: 90, rot: 16, ampY: 10, ampR: 6, freq: 1.6, phase: 2.9 },
-    { img: "gota-calda.png", layer: "front", dx: 1720, dy: 790, mx: 935, my: 1320, size: 155, mSize: 95, rot: -14, ampY: 13, ampR: 8, freq: 1.7, phase: 4.1 }
+    { img: "gota-calda.webp", layer: "back", dx: 210, dy: 260, mx: 135, my: 440, size: 110, mSize: 78, rot: -18, ampY: 9, ampR: 5, freq: 1.3, phase: 0.4 },
+    { img: "colher.webp", layer: "mid", dx: 1710, dy: 300, mx: 930, my: 480, size: 175, mSize: 116, rot: 24, ampY: 11, ampR: -7, freq: 1.45, phase: 1.8 },
+    { img: "gota-calda.webp", layer: "mid", dx: 225, dy: 780, mx: 145, my: 1260, size: 135, mSize: 90, rot: 16, ampY: 10, ampR: 6, freq: 1.6, phase: 2.9 },
+    { img: "gota-calda.webp", layer: "front", dx: 1720, dy: 790, mx: 935, my: 1320, size: 155, mSize: 95, rot: -14, ampY: 13, ampR: 8, freq: 1.7, phase: 4.1 }
   ]);
 
   const sec5FloatItems = createSectionFloats(sec5FloatsWrap, [
-    { img: "coco.png", layer: "back", dx: 210, dy: 250, mx: 135, my: 440, size: 125, mSize: 84, rot: -16, ampY: 9, ampR: 6, freq: 1.35, phase: 0.7 },
-    { img: "folha.png", layer: "mid", dx: 1705, dy: 280, mx: 935, my: 465, size: 155, mSize: 105, rot: 22, ampY: 11, ampR: -7, freq: 1.5, phase: 1.9 },
-    { img: "folha.png", layer: "mid", dx: 215, dy: 775, mx: 140, my: 1245, size: 145, mSize: 98, rot: -20, ampY: 10, ampR: 7, freq: 1.4, phase: 3.1 },
-    { img: "coco.png", layer: "front", dx: 1715, dy: 790, mx: 935, my: 1315, size: 160, mSize: 100, rot: 15, ampY: 12, ampR: -6, freq: 1.6, phase: 4.4 }
+    { img: "coco.webp", layer: "back", dx: 210, dy: 250, mx: 135, my: 440, size: 125, mSize: 84, rot: -16, ampY: 9, ampR: 6, freq: 1.35, phase: 0.7 },
+    { img: "folha.webp", layer: "mid", dx: 1705, dy: 280, mx: 935, my: 465, size: 155, mSize: 105, rot: 22, ampY: 11, ampR: -7, freq: 1.5, phase: 1.9 },
+    { img: "folha.webp", layer: "mid", dx: 215, dy: 775, mx: 140, my: 1245, size: 145, mSize: 98, rot: -20, ampY: 10, ampR: 7, freq: 1.4, phase: 3.1 },
+    { img: "coco.webp", layer: "front", dx: 1715, dy: 790, mx: 935, my: 1315, size: 160, mSize: 100, rot: 15, ampY: 12, ampR: -6, freq: 1.6, phase: 4.4 }
   ]);
 
   // Monta os 6 sabores (copos, textos gigantes, edições, subtítulos, contadores e flutuantes)
@@ -1772,6 +1772,12 @@
     applyIdle();
     applyMouseParallax();
     syncUI(0);
-    window.goStep(0);
+    if (window.__preloaderActive) {
+      window.addEventListener("preloader:reveal", function () {
+        window.goStep(0);
+      }, { once: true });
+    } else {
+      window.goStep(0);
+    }
   }
 })();
