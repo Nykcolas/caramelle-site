@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caramellê — A Jornada do Copo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="viewport">
+    <!-- Camada de fundos: ocupa a JANELA INTEIRA (fora do palco), para não haver emenda nem faixa -->
+    <div id="bg-stack" aria-hidden="true">
+      <svg width="0" height="0" style="position:absolute;pointer-events:none" aria-hidden="true">
+        <defs>
+          <pattern id="xadrez-pat-v" width="80" height="80" patternUnits="userSpaceOnUse">
+            <rect x="0" y="0" width="40" height="40" fill="#3D1208" />
+            <rect x="40" y="0" width="40" height="40" fill="#FFE8D8" />
+            <rect x="0" y="40" width="40" height="40" fill="#FFE8D8" />
+            <rect x="40" y="40" width="40" height="40" fill="#3D1208" />
+          </pattern>
+        </defs>
+      </svg>
+      <!-- Fundos das seções -->
+      <div id="bg-hero" aria-hidden="true">
+        <!-- Estrutura pronta para img/textura-calda.jpg no futuro -->
+        <div class="calda-texture calda-hero"></div>
+      </div>
+      <div id="bg-pudim" aria-hidden="true"></div>
+      <div id="bg-flavors" aria-hidden="true">
+        <div class="bg-flavor" id="bg-flavor-0">
+          <div class="calda-texture calda-tradicional"></div>
+        </div>
+        <div class="bg-flavor" id="bg-flavor-1"></div>
+        <div class="bg-flavor" id="bg-flavor-2"></div>
+        <div class="bg-flavor" id="bg-flavor-3"></div>
+        <div class="bg-flavor" id="bg-flavor-4"></div>
+        <div class="bg-flavor" id="bg-flavor-5"></div>
+        <div class="bg-flavor bg-sec" id="bg-sec-4"></div>
+        <div class="bg-flavor bg-sec" id="bg-sec-5"></div>
+        <div class="bg-flavor bg-sec" id="bg-sec-6"></div>
+        <div class="bg-flavor bg-sec" id="bg-sec-7"></div>
+        <div class="bg-flavor bg-sec" id="bg-sec-8"></div>
+        <div class="bg-flavor bg-sec" id="bg-sec-9"></div>
+      </div>
+      <!-- Faixa xadrez do hero (largura total da janela) -->
+      <div id="hero-xadrez">
+        <svg width="100%" height="100%" preserveAspectRatio="none">
+          <rect width="100%" height="100%" fill="url(#xadrez-pat-v)" />
+        </svg>
+      </div>
+      <!-- Base escura do rodapé (largura total da janela) -->
+      <div id="footer-band"></div>
+    </div>
+    <!-- Menu superior fixo (nível de viewport, fora do #stage) -->
+    <header id="site-nav" role="banner">
+      <a class="nav-logo" href="#inicio" data-nav-step="0" aria-label="Caramellê — Início">
+        <img class="nav-logo-light" src="img/logo-creme.png" alt="Caramellê" draggable="false" />
+        <img class="nav-logo-dark" src="img/logo.png" alt="" aria-hidden="true" draggable="false" />
+      </a>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a class="nav-link active" href="#inicio" data-nav-step="0">Início</a>
+        <a class="nav-link" href="#o-pudim" data-nav-step="1">O pudim</a>
+        <a class="nav-link" href="#sabores" data-nav-step="2">Sabores</a>
+        <a class="nav-link" href="#tamanhos" data-nav-step="8">Tamanhos</a>
+        <a class="nav-link" href="#depoimentos" data-nav-step="10">Depoimentos</a>
+        <a class="nav-link" href="#quem-somos" data-nav-step="11">Quem somos</a>
+        <a class="nav-link" href="#parceiros" data-nav-step="12">Parceiros</a>
+      </nav>
+      <a class="btn-pill nav-cta" href="#peca-o-seu" data-nav-step="13">
+        <span class="nav-cta-text">Peça o seu</span>
+      </a>
+      <button
+        id="nav-hamburger"
+        class="nav-hamburger"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="mobile-nav-overlay"
+      >
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </header>
+
+    <!-- Overlay mobile de navegação -->
+    <div
+      id="mobile-nav-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Menu de navegação"
+      aria-hidden="true"
+    >
+      <button id="mobile-nav-close" class="mobile-nav-close" type="button" aria-label="Fechar menu">
+        <span class="close-line"></span>
+        <span class="close-line"></span>
+      </button>
+      <nav class="mobile-nav-links" aria-label="Menu mobile">
+        <a class="mobile-nav-link active" href="#inicio" data-nav-step="0">Início</a>
+        <a class="mobile-nav-link" href="#o-pudim" data-nav-step="1">O pudim</a>
+        <a class="mobile-nav-link" href="#sabores" data-nav-step="2">Sabores</a>
+        <a class="mobile-nav-link" href="#tamanhos" data-nav-step="8">Tamanhos</a>
+        <a class="mobile-nav-link" href="#depoimentos" data-nav-step="10">Depoimentos</a>
+        <a class="mobile-nav-link" href="#quem-somos" data-nav-step="11">Quem somos</a>
+        <a class="mobile-nav-link" href="#parceiros" data-nav-step="12">Parceiros</a>
+        <a class="btn-pill mobile-nav-cta" href="#peca-o-seu" data-nav-step="13">
+          <span class="nav-cta-text">Peça o seu</span>
+        </a>
+      </nav>
+    </div>
+
+    <main id="stage" aria-label="Jornada do Copo Caramellê">
+      <!-- Padrão SVG limpo (xadrez chocolate/creme 40px) -->
+      <svg width="0" height="0" style="position:absolute;pointer-events:none" aria-hidden="true">
+        <defs>
+          <pattern id="xadrez-pat" width="80" height="80" patternUnits="userSpaceOnUse">
+            <rect x="0" y="0" width="40" height="40" fill="#3D1208" />
+            <rect x="40" y="0" width="40" height="40" fill="#FFE8D8" />
+            <rect x="0" y="40" width="40" height="40" fill="#FFE8D8" />
+            <rect x="40" y="40" width="40" height="40" fill="#3D1208" />
+          </pattern>
+        </defs>
+      </svg>
+
+      
+
+      <!-- Seção 1: Hero -->
+      <section id="sec-hero" aria-label="Início">
+        <div id="hero-content">
+          <img class="hero-logo" src="img/logo.png" alt="Caramellê" draggable="false" />
+          <h1 class="hero-title">
+            <span class="line"><span class="word">Irresistível</span></span>
+            <span class="line"><span class="word">até</span> <span class="word">a</span></span>
+            <span class="line"><span class="word">última</span> <span class="word">colher</span></span>
+          </h1>
+          <p class="hero-sub">
+            Pudim artesanal no copo americano. Direto de Campina Grande para a sua mesa.
+          </p>
+          <a
+            class="btn-pill btn-cta hero-cta"
+            href="https://wa.me/message/7A32UJW33JHUD1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Quero o meu
+          </a>
+        </div>
+
+        
+      </section>
+
+      <!-- Portal do Hero: camada de trás (abaixo do copo) -->
+      <div id="portal-back" aria-hidden="true">
+        <svg viewBox="0 0 640 380" width="100%" height="100%" preserveAspectRatio="none" overflow="visible">
+          <defs>
+            <!-- interior na paleta da marca: laranja caramelo claro (embaixo à esquerda) -> laranja profundo (em cima à direita) -->
+            <linearGradient id="elipseGrad" gradientUnits="userSpaceOnUse" x1="120" y1="320" x2="520" y2="60">
+              <stop offset="0" stop-color="#F29A3E" />
+              <stop offset="0.55" stop-color="#DE6E18" />
+              <stop offset="1" stop-color="#B4500E" />
+            </linearGradient>
+          </defs>
+          <ellipse cx="320" cy="190" rx="286" ry="170" fill="url(#elipseGrad)" />
+        </svg>
+      </div>
+
+      <!-- Seção 2: O Pudim (layout editorial) -->
+      <section id="sec-pudim" aria-label="O pudim">
+        <div id="pudim-floats" aria-hidden="true"></div>
+        <div id="pudim-content">
+          <p class="pudim-eyebrow">Caramellê · Campina Grande</p>
+          <h2 class="pudim-title">
+            Feito à mão,<br /><em>até a última colher</em>
+          </h2>
+          <div class="pudim-body">
+            <div class="pudim-prose">
+              <p class="pudim-p">
+                O Caramellê nasceu em Campina Grande com uma ideia simples: fazer o pudim que a gente lembra, só que <em>ainda melhor</em>. Cremoso, com a calda no ponto, <em>âmbar e brilhante</em>, sem amargor, escorrendo devagar a cada colherada.
+              </p>
+              <p class="pudim-p">
+                Cada copo sai da cozinha <em>feito à mão</em>, em pequenos lotes, e vem no clássico <em>copo americano</em> de vidro, que fica com você depois da última colher. Também tem a versão de 1 kg, para dividir. <em>Ou não.</em>
+              </p>
+            </div>
+            <p class="pudim-sign">— irresistível até a última colher.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção 3: Sabores (carrossel por steps) -->
+      <section id="sec-carrossel" aria-label="Sabores">
+        <div id="sabor-floats-back" aria-hidden="true"></div>
+        <div id="sabor-texts-bg" aria-hidden="true"></div>
+        <div id="sabor-floats-mid" aria-hidden="true"></div>
+
+        <!-- Copos dos sabores 2..6 (sabor 1 usa #copo) -->
+        <div id="sabor-copos" aria-hidden="true"></div>
+
+        <div id="sabor-ui">
+          <div id="sabor-edicoes"></div>
+          <div id="sabor-subs"></div>
+          <div class="sabor-actions">
+            <div id="sabor-counters" aria-live="polite"></div>
+            <a
+              class="btn-pill btn-cta sabor-cta"
+              href="https://wa.me/message/7A32UJW33JHUD1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Quero esse
+            </a>
+          </div>
+        </div>
+
+        <div id="sabor-floats-front" aria-hidden="true"></div>
+      </section>
+
+      <!-- Seção 4: Copo e 1 kg -->
+      <section id="sec-4" class="extra-sec" aria-label="Copo e 1 kg">
+        <div id="sec4-floats" class="sec-floats" aria-hidden="true"></div>
+        <div class="sec4-wrap">
+          <header class="sec-head sec4-head">
+            <p class="sec-eyebrow">Dois tamanhos</p>
+            <h2 class="sec-title">Do copo ao <em>quilo</em>.</h2>
+          </header>
+          <div class="sec4-cols">
+            <div class="sec4-col sec4-left">
+              <div class="sec4-copo-box">
+                <div class="sec4-copo-inner">
+                  <img src="img/copos/tradicional.png" alt="Pudim Caramellê no copo americano" draggable="false" />
+                </div>
+              </div>
+              <h3 class="sec4-sub">No copo americano</h3>
+              <p class="sec4-desc">O clássico individual, de vidro, com tampa dourada. E o copo fica com você.</p>
+            </div>
+            <div class="sec4-col sec4-right">
+              <div class="sec4-prato-box">
+                <img class="sec4-prato-img" src="img/pudim-1kg-prato.png" alt="Pudim Caramellê versão 1 kg no prato" draggable="false" />
+              </div>
+              <h3 class="sec4-sub">Versão de 1 kg</h3>
+              <p class="sec4-desc">Lançada em novembro, para dividir à mesa. Mais pudim, mais cremosidade e a mesma calda irresistível.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção 5: Edição limitada -->
+      <section id="sec-5" class="extra-sec" aria-label="Edição limitada">
+        <div id="sec5-floats" class="sec-floats" aria-hidden="true"></div>
+        <div class="sec5-wrap">
+          <header class="sec-head sec5-head">
+            <p class="sec-eyebrow">Edição limitada · São João</p>
+            <h2 class="sec-title">Sabores que <em>vão embora</em>.</h2>
+          </header>
+          <div class="sec5-cols">
+            <div class="sec5-item sec5-pacoca">
+              <div class="sec5-circle">
+                <img src="img/instagram/pacoca.jpg" alt="Pudim de Paçoca Caramellê" draggable="false" />
+              </div>
+              <h3 class="sec5-name">Paçoca</h3>
+              <p class="sec5-desc">A cremosidade do pudim artesanal com o sabor da verdadeira paçoca. Conquista já na primeira colherada.</p>
+            </div>
+            <div class="sec5-item sec5-cocada">
+              <div class="sec5-copo-wrap">
+                <img src="img/copos/cocada.png" alt="Pudim Cocada Cremosa Caramellê" draggable="false" />
+              </div>
+              <h3 class="sec5-name">Cocada cremosa</h3>
+              <p class="sec5-desc">O sabor mais nordestino do São João, com coco preparado artesanalmente.</p>
+            </div>
+          </div>
+          <div class="sec5-foot">
+            <p class="sec5-note">Consulte a disponibilidade no cardápio.</p>
+            <span class="tag-thin">Edição limitada</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção 6: Feedbacks -->
+      <section id="sec-6" class="extra-sec" aria-label="Feedbacks">
+        <div class="sec6-giant-wrap" aria-hidden="true">
+          <span class="sec6-giant">Obrigado</span>
+        </div>
+        <div class="sec6-wrap">
+          <header class="sec-head sec6-head">
+            <p class="sec-eyebrow">Quem já provou</p>
+            <h2 class="sec-title">5 estrelas no <em>iFood</em>.</h2>
+          </header>
+          <div class="sec6-stars" aria-label="5 de 5 estrelas">
+            <svg class="sec6-star" viewBox="0 0 48 48" width="46" height="46"><path d="M24 5l5.4 11.4 12.6 1.7-9.2 8.8 2.3 12.5L24 33.4 12.9 39.4l2.3-12.5-9.2-8.8 12.6-1.7z" fill="#DE6E18" stroke="#DE6E18" stroke-width="1.8" stroke-linejoin="round" /></svg>
+            <svg class="sec6-star" viewBox="0 0 48 48" width="46" height="46"><path d="M24 5l5.4 11.4 12.6 1.7-9.2 8.8 2.3 12.5L24 33.4 12.9 39.4l2.3-12.5-9.2-8.8 12.6-1.7z" fill="#DE6E18" stroke="#DE6E18" stroke-width="1.8" stroke-linejoin="round" /></svg>
+            <svg class="sec6-star" viewBox="0 0 48 48" width="46" height="46"><path d="M24 5l5.4 11.4 12.6 1.7-9.2 8.8 2.3 12.5L24 33.4 12.9 39.4l2.3-12.5-9.2-8.8 12.6-1.7z" fill="#DE6E18" stroke="#DE6E18" stroke-width="1.8" stroke-linejoin="round" /></svg>
+            <svg class="sec6-star" viewBox="0 0 48 48" width="46" height="46"><path d="M24 5l5.4 11.4 12.6 1.7-9.2 8.8 2.3 12.5L24 33.4 12.9 39.4l2.3-12.5-9.2-8.8 12.6-1.7z" fill="#DE6E18" stroke="#DE6E18" stroke-width="1.8" stroke-linejoin="round" /></svg>
+            <svg class="sec6-star" viewBox="0 0 48 48" width="46" height="46"><path d="M24 5l5.4 11.4 12.6 1.7-9.2 8.8 2.3 12.5L24 33.4 12.9 39.4l2.3-12.5-9.2-8.8 12.6-1.7z" fill="#DE6E18" stroke="#DE6E18" stroke-width="1.8" stroke-linejoin="round" /></svg>
+          </div>
+          <div class="sec6-mural">
+            <article class="sec6-card sec6-card-featured">
+              <span class="sec6-rule" aria-hidden="true"></span>
+              <blockquote class="sec6-quote">“Amor em forma de pudim, só peçam.”</blockquote>
+              <p class="sec6-tag">CLIENTE · COMENTÁRIO NO INSTAGRAM</p>
+            </article>
+            <article class="sec6-card">
+              <span class="sec6-rule" aria-hidden="true"></span>
+              <blockquote class="sec6-quote">“O melhor pudim de Campina Grande.”</blockquote>
+              <p class="sec6-tag">CLIENTE · COMENTÁRIO NO INSTAGRAM</p>
+            </article>
+            <article class="sec6-card">
+              <span class="sec6-rule" aria-hidden="true"></span>
+              <blockquote class="sec6-quote">“Quando faz com amor é assim, sensacional.”</blockquote>
+              <p class="sec6-tag">CLIENTE · COMENTÁRIO NO INSTAGRAM</p>
+            </article>
+            <article class="sec6-card">
+              <span class="sec6-rule" aria-hidden="true"></span>
+              <blockquote class="sec6-quote">“Quem prova aprova.”</blockquote>
+              <p class="sec6-tag">CLIENTE · COMENTÁRIO NO INSTAGRAM</p>
+            </article>
+            <article class="sec6-card">
+              <span class="sec6-rule" aria-hidden="true"></span>
+              <blockquote class="sec6-quote">“Surreal de bom.”</blockquote>
+              <p class="sec6-tag">CLIENTE · COMENTÁRIO NO INSTAGRAM</p>
+            </article>
+            <article class="sec6-card sec6-card-closing">
+              <span class="sec6-rule" aria-hidden="true"></span>
+              <blockquote class="sec6-quote">“Impossível escolher um só.”</blockquote>
+              <p class="sec6-tag">CLIENTE · COMENTÁRIO NO INSTAGRAM</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção 7: Quem somos -->
+      <section id="sec-7" class="extra-sec" aria-label="Quem somos">
+        <div class="sec7-band-wrap" aria-hidden="true">
+          <div class="sec7-band">
+            <svg width="100%" height="100%" preserveAspectRatio="none">
+              <rect width="100%" height="100%" fill="url(#xadrez-pat)" />
+            </svg>
+          </div>
+          <div class="sec7-seal">
+            <img src="img/logo-creme.png" alt="Caramellê" draggable="false" />
+          </div>
+        </div>
+        <div class="sec7-content">
+          <p class="sec-eyebrow">Quem somos</p>
+          <h2 class="sec-title sec7-title">Uma doce novidade para <em>Campina Grande</em>.</h2>
+          <div class="sec7-prose">
+            <p class="sec7-p">A Caramellê nasceu para transformar uma das sobremesas mais amadas em algo ainda mais especial: pudim artesanal, cremoso e irresistível em cada colherada.</p>
+            <p class="sec7-p">A gente cuida de cada etapa, do ponto da calda ao copo que chega até você. O ingrediente principal é sempre o carinho e a dedicação em cada uma delas.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção 8: Parceiros -->
+      <section id="sec-8" class="extra-sec" aria-label="Parceiros">
+        <div class="sec8-wrap">
+          <header class="sec-head sec8-head">
+            <p class="sec-eyebrow">Também está em</p>
+            <h2 class="sec-title">O seu <em>restaurante favorito</em>.</h2>
+          </header>
+          <ul class="sec8-list">
+            <li class="sec8-item">Toriba Grill</li>
+            <li class="sec8-item">Guga's Burguer</li>
+            <li class="sec8-item">Bom Que Só</li>
+            <li class="sec8-item">Delegas Restaurante</li>
+            <li class="sec8-item">Ulin Lanches</li>
+            <li class="sec8-item">Budega do seu Regi</li>
+            <li class="sec8-item">Big Espetos</li>
+            <li class="sec8-item">Tecca Villa Nova</li>
+          </ul>
+          <p class="sec8-foot">
+            Quer ter o pudim Caramellê no seu restaurante?
+            <a
+              href="https://wa.me/message/7A32UJW33JHUD1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Fale com a gente.</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- Seção 9: Peça o seu -->
+      <section id="sec-9" class="extra-sec" aria-label="Peça o seu">
+        <div class="sec9-left">
+          <h2 class="sec9-title">
+            <span class="sec9-tpart">Peça o</span>
+            <span class="sec9-tpart"><em>seu</em>.</span>
+          </h2>
+          <div class="sec9-cols">
+            <div class="sec9-col">
+              <p class="sec9-label">Delivery</p>
+              <p class="sec9-text">Pelo iFood, pelo Direct e pelo WhatsApp.</p>
+              <a
+                class="btn-pill btn-cta sec9-btn"
+                href="https://wa.me/message/7A32UJW33JHUD1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Pedir pelo WhatsApp</a>
+            </div>
+            <div class="sec9-col">
+              <p class="sec9-label">Retirada</p>
+              <p class="sec9-text">Shopping Luizza Motta · Campina Grande – PB.</p>
+              <a
+                class="sec9-insta"
+                href="https://www.instagram.com/pudimcaramelle/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Instagram @pudimcaramelle</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="sec9-visual" aria-hidden="true">
+          <div class="sec9-elipse-back">
+            <svg viewBox="0 0 660 300" width="100%" height="100%" preserveAspectRatio="none" overflow="visible">
+              <defs>
+                <radialGradient id="elipseGrad" gradientUnits="userSpaceOnUse" cx="330" cy="150" r="330"
+                  gradientTransform="translate(330 150) scale(1 0.5) translate(-330 -150)">
+                  <stop offset="0" stop-color="#F29A3E" />
+                  <stop offset="0.55" stop-color="#DE6E18" />
+                  <stop offset="1" stop-color="#C4570C" />
+                </radialGradient>
+              </defs>
+              <ellipse cx="330" cy="150" rx="310" ry="132" fill="url(#elipseGrad)" />
+            </svg>
+          </div>
+          <div class="sec9-copo">
+            <div class="copo-mouse sec9-copo-mouse">
+              <img src="img/copos/tradicional.png" alt="Pudim Caramellê" draggable="false" />
+            </div>
+          </div>
+          <div class="sec9-elipse-front">
+            <svg viewBox="0 0 660 300" width="100%" height="100%" preserveAspectRatio="none" overflow="visible">
+              <path
+                d="M 58 85 L 128 85 A 202 48 0 0 0 532 85 L 602 85 A 310 132 0 1 1 58 85 Z"
+                fill="url(#elipseGrad)"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <footer class="sec9-footer" aria-label="Rodapé">
+          <div class="sec9-footer-grid">
+            <div class="footer-col footer-brand">
+              <img class="footer-logo" src="img/logo-creme.png" alt="Caramellê" draggable="false" />
+              <p class="footer-tagline">Pudim artesanal no copo americano e na versão de 1 kg. Campina Grande – PB.</p>
+            </div>
+            <div class="footer-col footer-nav">
+              <h3 class="footer-heading">Navegue</h3>
+              <ul class="footer-list footer-list-nav">
+                <li><a href="#inicio" data-nav-step="0">Início</a></li>
+                <li><a href="#o-pudim" data-nav-step="1">O pudim</a></li>
+                <li><a href="#sabores" data-nav-step="2">Sabores</a></li>
+                <li><a href="#tamanhos" data-nav-step="8">Tamanhos</a></li>
+                <li><a href="#depoimentos" data-nav-step="10">Depoimentos</a></li>
+                <li><a href="#quem-somos" data-nav-step="11">Quem somos</a></li>
+                <li><a href="#parceiros" data-nav-step="12">Parceiros</a></li>
+              </ul>
+            </div>
+            <div class="footer-col footer-orders">
+              <h3 class="footer-heading">Pedidos</h3>
+              <ul class="footer-list">
+                <li>
+                  <a href="https://wa.me/message/7A32UJW33JHUD1" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                </li>
+                <li><span class="footer-plain">iFood</span></li>
+                <li>
+                  <a href="https://www.instagram.com/pudimcaramelle/" target="_blank" rel="noopener noreferrer">Instagram @pudimcaramelle</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-col footer-pickup">
+              <h3 class="footer-heading">Retirada</h3>
+              <ul class="footer-list">
+                <li><span>Shopping Luizza Motta</span></li>
+                <li><span>Campina Grande – PB</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="sec9-footer-bottom">
+            <span>© 2026 Caramellê · Pudim artesanal. Todos os direitos reservados.</span>
+            <span>Desenvolvido por Oltrix Ecossistem</span>
+          </div>
+        </footer>
+      </section>
+
+      <!-- Sombra do copo -->
+      <div id="copo-shadow" aria-hidden="true"></div>
+
+      <!-- O COPO PRINCIPAL (#copo): viaja do Hero -> Seção 2 -> Sabor 1 -->
+      <div id="copo">
+        <div class="copo-mouse">
+          <div class="copo-bob">
+            <img
+              id="copo-img"
+              src="img/copos/tradicional.png"
+              alt="Pudim Caramellê Tradicional no copo americano"
+              draggable="false"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Portal do Hero: camada da frente (por cima da base do copo) -->
+      <div id="portal-front" aria-hidden="true"></div>
+
+      <!-- Pontos de navegação (14 etapas: vertical à direita no desktop; horizontal na base no mobile) -->
+      <nav id="nav-dots" aria-label="Navegação por etapas">
+        <button class="nav-dot active" type="button" data-step="0" aria-label="Etapa 1: Início"></button>
+        <button class="nav-dot" type="button" data-step="1" aria-label="Etapa 2: O pudim"></button>
+        <button class="nav-dot" type="button" data-step="2" aria-label="Etapa 3: Sabor Tradicional"></button>
+        <button class="nav-dot" type="button" data-step="3" aria-label="Etapa 4: Sabor Café"></button>
+        <button class="nav-dot" type="button" data-step="4" aria-label="Etapa 5: Sabor Duo"></button>
+        <button class="nav-dot" type="button" data-step="5" aria-label="Etapa 6: Sabor Morango"></button>
+        <button class="nav-dot" type="button" data-step="6" aria-label="Etapa 7: Sabor Nutella"></button>
+        <button class="nav-dot" type="button" data-step="7" aria-label="Etapa 8: Sabor Cocada"></button>
+        <button class="nav-dot" type="button" data-step="8" aria-label="Etapa 9: Copo e 1 kg"></button>
+        <button class="nav-dot" type="button" data-step="9" aria-label="Etapa 10: Edição limitada"></button>
+        <button class="nav-dot" type="button" data-step="10" aria-label="Etapa 11: Feedbacks"></button>
+        <button class="nav-dot" type="button" data-step="11" aria-label="Etapa 12: Quem somos"></button>
+        <button class="nav-dot" type="button" data-step="12" aria-label="Etapa 13: Parceiros"></button>
+        <button class="nav-dot" type="button" data-step="13" aria-label="Etapa 14: Peça o seu"></button>
+      </nav>
+    </main>
+  </div>
+
+  <script src="vendor/gsap.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
