@@ -500,7 +500,8 @@
     const stageBottom = navH + availH / 2 + (L.h * s) / 2;
     const extra = Math.max(0, window.innerHeight - stageBottom);
     const stripStage = isMobile ? 52 : 64;
-    const footStage = isMobile ? 560 : 220;
+    const footEl = document.querySelector(".sec9-footer");
+    const footStage = footEl ? footEl.offsetHeight : (isMobile ? 600 : 220); // altura REAL do rodapé (unidades do palco)
     viewport.style.setProperty("--strip-h", (stripStage * s) + "px");
     viewport.style.setProperty("--strip-bottom", "0px"); // faixa colada na base da janela
     viewport.style.setProperty("--footer-h", (footStage * s + extra) + "px");

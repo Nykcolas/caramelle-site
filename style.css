@@ -2169,3 +2169,128 @@ body {
   color: #3D1208;
 }
 .nav-link::after { background: currentColor !important; }
+
+/* =========================================================================
+   MOBILE v2: tipografia e alvos de toque legíveis na tela do celular
+   O palco mobile (1080 px) aparece reduzido a ~36% em um celular de 390 px de
+   largura, então 50 px aqui = ~18 px na tela. Metas na tela: texto de leitura
+   >= 16 px, rótulos >= 13 px, botões >= 50 px de altura, alvos de toque >= 44 px.
+   ========================================================================= */
+#stage.is-mobile .hero-logo { width: 440px; margin-bottom: 18px; }
+#stage.is-mobile .hero-sub { font-size: 50px; line-height: 1.38; max-width: 900px; }
+
+#stage.is-mobile .btn-cta,
+#stage.is-mobile .sabor-cta,
+#stage.is-mobile .sec9-btn {
+  min-height: 150px;
+  height: auto;
+  padding: 0 76px;
+  font-size: 48px;
+  line-height: 1;
+}
+
+#stage.is-mobile .pudim-eyebrow { font-size: 38px; letter-spacing: 0.2em; }
+#stage.is-mobile .pudim-p { font-size: 50px; line-height: 1.46; }
+#stage.is-mobile .pudim-sign { font-size: 50px; }
+
+#stage.is-mobile .sabor-edicao-tag { font-size: 36px; letter-spacing: 0.18em; }
+#stage.is-mobile #sabor-edicoes { height: 48px; width: 700px; }
+#stage.is-mobile #sabor-subs { width: 980px; height: 140px; }
+#stage.is-mobile .sabor-sub { font-size: 52px; line-height: 1.28; }
+#stage.is-mobile .counter-num,
+#stage.is-mobile .sabor-counter-num { font-size: 90px; }
+#stage.is-mobile .counter-total { font-size: 38px; }
+
+#stage.is-mobile .sec-eyebrow { font-size: 38px; letter-spacing: 0.2em; margin-bottom: 22px; }
+#stage.is-mobile .sec4-desc { font-size: 50px; line-height: 1.4; }
+#stage.is-mobile .sec5-desc { font-size: 50px; line-height: 1.4; }
+#stage.is-mobile .sec5-note { font-size: 46px; }
+#stage.is-mobile .tag-thin { font-size: 36px; padding: 18px 40px; letter-spacing: 0.16em; }
+#stage.is-mobile .sec6-quote { font-size: 58px; }
+#stage.is-mobile .sec6-card-featured .sec6-quote { font-size: 74px; }
+#stage.is-mobile .sec6-tag { font-size: 34px; letter-spacing: 0.14em; }
+#stage.is-mobile .sec7-p { font-size: 50px; line-height: 1.46; }
+#stage.is-mobile .sec8-foot { font-size: 48px; line-height: 1.4; }
+#stage.is-mobile .sec8-foot a { display: inline-block; padding: 34px 0; }
+
+#stage.is-mobile .sec9-label { font-size: 38px; letter-spacing: 0.2em; }
+#stage.is-mobile .sec9-text { font-size: 50px; line-height: 1.36; }
+#stage.is-mobile .sec9-insta { font-size: 46px; padding: 30px 0 12px; }
+
+#stage.is-mobile .footer-tagline { font-size: 40px; line-height: 1.4; }
+#stage.is-mobile .footer-heading { font-size: 36px; letter-spacing: 0.2em; }
+#stage.is-mobile .footer-list { font-size: 42px; }
+#stage.is-mobile .footer-list a,
+#stage.is-mobile .footer-list .footer-plain,
+#stage.is-mobile .footer-list li { padding: 14px 0; }
+#stage.is-mobile .sec9-footer-bottom { font-size: 34px; }
+
+/* pontos de navegação: área de toque maior que o desenho */
+#stage.is-mobile .nav-dot { position: relative; }
+#stage.is-mobile .nav-dot::before { content: ""; position: absolute; inset: -30px -16px; }
+/* logo do menu: alvo de toque de 48 px */
+#viewport.is-mobile .nav-logo { height: 48px; }
+
+/* ---- MOBILE v2: ajustes de espaço depois do aumento dos textos ---- */
+/* Seção 2 (O pudim): no celular fica só o primeiro parágrafo (o 1 kg e o copo vêm logo depois, na seção 4) */
+#stage.is-mobile .pudim-p + .pudim-p { display: none; }
+
+/* Seção 5 (Edição limitada) */
+#stage.is-mobile .sec5-wrap { padding-top: 112px; }
+#stage.is-mobile .sec5-head .sec-title { font-size: 96px; }
+#stage.is-mobile .sec5-cols { gap: 14px; margin-bottom: 14px; }
+#stage.is-mobile .sec5-circle { width: 300px; height: 300px; margin-bottom: 8px; }
+#stage.is-mobile .sec5-copo-wrap { height: 340px; margin-bottom: 6px; }
+#stage.is-mobile .sec5-name { font-size: 60px; margin-bottom: 4px; }
+#stage.is-mobile .sec5-desc { font-size: 46px; line-height: 1.34; }
+#stage.is-mobile .sec5-note { font-size: 42px; }
+
+/* Seção 8 (Parceiros): a frase final quebra linha em vez de vazar pela borda */
+#stage.is-mobile .sec8-foot { white-space: normal; max-width: 952px; }
+
+/* Seção 9 (Peça o seu): só o Delivery no bloco central (retirada e Instagram ficam no rodapé) */
+#stage.is-mobile .sec9-left { top: 130px; }
+#stage.is-mobile .sec9-title { font-size: 140px; }
+#stage.is-mobile .sec9-cols { top: 880px; grid-template-columns: 1fr; justify-items: center; text-align: center; max-width: 952px; }
+#stage.is-mobile .sec9-col:nth-child(2) { display: none; }
+#stage.is-mobile .sec9-visual { top: 640px; }
+#stage.is-mobile .sec9-elipse-back,
+#stage.is-mobile .sec9-elipse-front { width: 500px; height: 218px; margin-left: -250px; margin-top: -109px; }
+#stage.is-mobile .sec9-copo { top: -125px; width: 280px; height: 420px; margin-left: -140px; margin-top: -210px; }
+#stage.is-mobile .sec9-footer { height: 660px; }
+#stage.is-mobile .footer-nav { display: none; }
+
+/* Rodapé no mobile: compacto, cabe na altura sem invadir o bloco de pedido */
+#stage.is-mobile .sec9-footer { height: 620px; padding: 26px 64px 84px; }
+#stage.is-mobile .footer-tagline { display: none; }
+#stage.is-mobile .footer-logo { height: 58px; }
+#stage.is-mobile .footer-list li,
+#stage.is-mobile .footer-list a,
+#stage.is-mobile .footer-list .footer-plain { padding: 6px 0; }
+#stage.is-mobile .sec9-footer-grid { gap: 10px 36px; }
+#stage.is-mobile .sec9-cols { top: 770px; }
+#stage.is-mobile .sec9-footer { height: 700px; }
+
+/* MOBILE v2: rótulos mais legíveis em celulares pequenos (360 px) e alvos de toque de 44 px */
+#stage.is-mobile .pudim-eyebrow,
+#stage.is-mobile .sec-eyebrow,
+#stage.is-mobile .sec9-label { font-size: 44px; }
+#stage.is-mobile .sabor-edicao-tag,
+#stage.is-mobile .tag-thin { font-size: 42px; }
+#stage.is-mobile #sabor-edicoes { height: 56px; }
+#stage.is-mobile .counter-total { font-size: 44px; }
+#stage.is-mobile .sec6-tag { font-size: 40px; letter-spacing: 0.1em; }
+#stage.is-mobile .sec5-note { font-size: 46px; }
+#stage.is-mobile .footer-heading { font-size: 42px; }
+#stage.is-mobile .footer-list,
+#stage.is-mobile .footer-list a,
+#stage.is-mobile .footer-list .footer-plain,
+#stage.is-mobile .footer-pickup li,
+#stage.is-mobile .footer-pickup span { font-size: 46px; }
+#stage.is-mobile .sec9-footer-bottom,
+#stage.is-mobile .sec9-footer-bottom span { font-size: 38px; }
+#stage.is-mobile .sec8-foot a { padding: 44px 0; }
+
+/* Rodapé mobile: o WhatsApp já é o botão logo acima; ficam o Instagram (alvo de toque de 44 px) e a retirada */
+#stage.is-mobile .footer-orders .footer-list li:nth-child(-n+2) { display: none; }
+#stage.is-mobile .footer-orders .footer-list a { display: block; padding: 32px 0; }
