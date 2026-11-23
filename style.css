@@ -43,7 +43,7 @@
   --creme-2: #F9DCC6;
   --caramelo: #D98640;
   --laranja: #DE6E18;
-  --laranja-escuro: #C4570C;
+  --laranja-escuro: #A5480B;
   --chocolate: #3D1208;
   --marrom: #5A2A12;
   --font-serif: "DM Serif Display", Georgia, serif;
@@ -173,7 +173,7 @@ body {
 
 .nav-cta {
   padding: 11px 28px;
-  background: #DE6E18;
+  background: #AE4C0D;
   color: #FFE8D8;
   font-size: 16px;
   font-weight: 700;
@@ -344,7 +344,7 @@ body {
 .mobile-nav-cta {
   margin-top: 14px;
   padding: 20px 52px;
-  background: #DE6E18;
+  background: #AE4C0D;
   color: #FFE8D8;
   font-size: clamp(22px, 2.8vh, 28px);
 }
@@ -430,6 +430,7 @@ body {
 #bg-sec-7 { background: var(--creme-2); }
 #bg-sec-8 { background: var(--creme); }
 #bg-sec-9 { background: radial-gradient(circle at 65% 48%, #4F1A0D 0%, var(--chocolate) 72%); }
+#bg-sec-10 { background: radial-gradient(circle at 50% 45%, #2E0F07 0%, #240B05 70%); }
 
 /* Botões pílula solid e etiquetas finas */
 .btn-pill {
@@ -454,7 +455,7 @@ body {
 
 .btn-cta {
   padding: 20px 48px;
-  background: var(--laranja);
+  background: #AE4C0D;
   color: var(--creme);
   font-size: 24px;
   letter-spacing: 0.02em;
@@ -1538,7 +1539,7 @@ body {
 .sec9-left {
   position: absolute;
   left: 120px;
-  top: 80px;
+  top: 255px;
   width: 960px;
   z-index: 16;
 }
@@ -1593,7 +1594,7 @@ body {
 }
 
 .sec9-btn {
-  background: var(--laranja);
+  background: #AE4C0D;
   color: var(--creme);
   padding: 18px 40px;
   font-size: 22px;
@@ -1613,7 +1614,7 @@ body {
 .sec9-visual {
   position: absolute;
   left: 1400px;
-  top: 580px;
+  top: 670px;
   z-index: 14;
 }
 
@@ -1651,98 +1652,156 @@ body {
   filter: drop-shadow(0 24px 36px rgba(0, 0, 0, 0.35));
 }
 
-.sec9-footer {
+/* Seção 10: Rodapé exclusivo */
+#sec-10 {
+  color: var(--creme);
+}
+
+.sec10-giant-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 9;
+  pointer-events: none;
+}
+
+.sec10-giant {
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 250px;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: rgba(255, 232, 216, 0.06);
+  white-space: nowrap;
+  transform: translateY(28%);
+}
+
+.sec10-wrap {
+  position: absolute;
+  left: 120px;
+  right: 120px;
+  top: 0;
+  bottom: 0;
+  z-index: 14;
+}
+
+.sec10-main {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;
-  height: 220px;
-  background: #240B05;
-  border-top: 1px solid rgba(255, 232, 216, 0.14);
-  padding: 26px 96px 18px;
+  top: 280px;
   display: flex;
-  flex-direction: column;
+  align-items: flex-start;
   justify-content: space-between;
-  z-index: 20;
+}
+
+.sec10-brand {
+  width: 460px;
+  flex-shrink: 0;
+}
+
+.sec10-logo {
+  display: block;
+  width: 460px;
+  height: auto;
+  margin-bottom: 28px;
+}
+
+.sec10-tagline {
+  max-width: 460px;
+  font-family: var(--font-sans);
+  font-size: 26px;
+  line-height: 1.5;
   color: #E8C9B0;
 }
 
-.sec9-footer-grid {
+.sec10-cols {
+  width: 1040px;
   display: grid;
-  grid-template-columns: 1.35fr 1.65fr 1.1fr 0.9fr;
-  gap: 40px;
+  grid-template-columns: 0.85fr 1.2fr 0.95fr;
+  gap: 80px;
   align-items: start;
 }
 
-.footer-logo {
-  height: 56px;
-  width: auto;
-  display: block;
-  margin-bottom: 10px;
-}
-
-.footer-tagline {
-  max-width: 300px;
+.sec10-heading {
   font-family: var(--font-sans);
-  font-size: 16px;
-  line-height: 1.38;
-  color: #E8C9B0;
-}
-
-.footer-heading {
-  font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: #F29A3E;
-  margin-bottom: 10px;
+  margin-bottom: 22px;
 }
 
-.footer-list {
+.sec10-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 14px;
   font-family: var(--font-sans);
-  font-size: 16px;
-  line-height: 1.35;
-  color: #E8C9B0;
+  font-size: 25px;
+  line-height: 1.3;
+  color: var(--creme);
 }
 
-.footer-list-nav {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  justify-content: start;
-  gap: 5px 32px;
-}
-
-.footer-list a {
+.sec10-list a {
+  position: relative;
+  display: inline-block;
   color: var(--creme);
   text-decoration: none;
-  transition: color 0.2s ease;
+  white-space: nowrap;
 }
 
-.footer-list a:hover {
-  color: #F29A3E;
+.sec10-list a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 1.5px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.22s ease;
 }
 
-.footer-list a:focus-visible {
+.sec10-list a:hover::after,
+.sec10-list a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.sec10-list a:focus-visible {
   outline: 2px solid #F29A3E;
-  outline-offset: 3px;
+  outline-offset: 4px;
   border-radius: 4px;
 }
 
-.sec9-footer-bottom {
-  border-top: 1px solid rgba(255, 232, 216, 0.12);
-  padding-top: 10px;
+.sec10-pickup-note {
+  margin-top: 18px;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 1.45;
+  color: #E8C9B0;
+}
+
+.sec10-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 70px;
+  border-top: 1px solid rgba(255, 232, 216, 0.14);
+  padding-top: 28px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-family: var(--font-sans);
-  font-size: 13px;
-  color: #E8C9B0;
-  opacity: 0.7;
+  font-size: 18px;
+  color: #B89A86;
 }
 
 /* =========================================================================
@@ -1987,17 +2046,17 @@ body {
   line-height: 1.48;
 }
 
-/* Mobile Seção 9 */
+/* Mobile Seção 9 (Peça o seu — sem rodapé) */
 #stage.is-mobile .sec9-left {
   left: 64px;
   right: 64px;
-  top: 150px;
+  top: 90px;
   width: auto;
   text-align: center;
 }
 
 #stage.is-mobile .sec9-title {
-  font-size: 150px;
+  font-size: 140px;
   max-width: none;
   margin-bottom: 0;
 }
@@ -2006,126 +2065,172 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  top: 830px;
-  grid-template-columns: 1fr 1fr;
-  gap: 36px;
+  top: 800px;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
+  gap: 52px;
   max-width: 952px;
   margin: 0 auto;
-  text-align: left;
 }
 
 #stage.is-mobile .sec9-label {
-  font-size: 20px;
+  font-size: 44px;
+  letter-spacing: 0.2em;
   margin-bottom: 8px;
 }
 
 #stage.is-mobile .sec9-text {
-  font-size: 30px;
-  line-height: 1.35;
-  margin-bottom: 18px;
+  font-size: 50px;
+  line-height: 1.36;
+  margin-bottom: 22px;
+}
+
+#stage.is-mobile .sec9-col:nth-child(2) .sec9-text {
+  margin-bottom: 10px;
 }
 
 #stage.is-mobile .sec9-btn {
   min-width: 0;
-  height: 78px;
-  padding: 0 34px;
-  font-size: 24px;
+  min-height: 150px;
+  height: auto;
+  padding: 0 76px;
+  font-size: 48px;
+  line-height: 1;
 }
 
 #stage.is-mobile .sec9-insta {
-  font-size: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 130px;
+  padding: 0 16px;
+  font-size: 46px;
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 232, 216, 0.55);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 10px;
 }
 
 #stage.is-mobile .sec9-visual {
   left: 540px;
-  top: 820px;
+  top: 670px;
 }
 
 #stage.is-mobile .sec9-elipse-back,
 #stage.is-mobile .sec9-elipse-front {
-  width: 560px;
-  height: 244px;
-  margin-left: -280px;
-  margin-top: -122px;
+  width: 540px;
+  height: 236px;
+  margin-left: -270px;
+  margin-top: -118px;
 }
 
 #stage.is-mobile .sec9-copo {
-  top: -150px;
-  width: 347px;
-  height: 520px;
-  margin-left: -173.5px;
-  margin-top: -260px;
+  top: -135px;
+  width: 320px;
+  height: 480px;
+  margin-left: -160px;
+  margin-top: -240px;
 }
 
-#stage.is-mobile .sec9-footer {
-  height: 560px;
-  padding: 24px 64px 78px;
-  text-align: left;
+/* Mobile Seção 10 (Rodapé exclusivo) */
+#stage.is-mobile .sec10-giant {
+  font-size: 155px;
+  transform: translateY(10%);
 }
 
-#stage.is-mobile .sec9-footer-grid {
-  grid-template-columns: 1fr 1fr;
-  gap: 16px 36px;
-}
-
-#stage.is-mobile .footer-brand {
-  grid-column: 1 / -1;
+#stage.is-mobile .sec10-wrap {
+  left: 64px;
+  right: 64px;
+  padding: 40px 0 100px;
   display: flex;
-  align-items: center;
-  gap: 28px;
+  flex-direction: column;
 }
 
-#stage.is-mobile .footer-logo {
-  height: 48px;
-  margin-bottom: 0;
-}
-
-#stage.is-mobile .footer-tagline {
-  max-width: none;
-  font-size: 28px;
-  line-height: 1.28;
-}
-
-#stage.is-mobile .footer-heading {
-  font-size: 28px;
-  margin-bottom: 6px;
-}
-
-#stage.is-mobile .footer-list {
-  font-size: 28px;
-  line-height: 1.26;
-  gap: 4px;
-}
-
-#stage.is-mobile .footer-list-nav {
-  grid-template-columns: repeat(2, auto);
-  gap: 4px 24px;
-}
-
-#stage.is-mobile .footer-pickup {
-  grid-column: 1 / -1;
-  display: flex;
-  align-items: baseline;
+#stage.is-mobile .sec10-main {
+  position: static;
+  flex-direction: column;
   gap: 20px;
 }
 
-#stage.is-mobile .footer-pickup .footer-heading {
-  margin-bottom: 0;
+#stage.is-mobile .sec10-brand {
+  width: 100%;
 }
 
-#stage.is-mobile .footer-pickup .footer-list {
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 6px 22px;
+#stage.is-mobile .sec10-logo {
+  width: 560px;
+  margin-bottom: 12px;
 }
 
-#stage.is-mobile .sec9-footer-bottom {
+#stage.is-mobile .sec10-tagline {
+  max-width: none;
+  font-size: 44px;
+  line-height: 1.26;
+}
+
+#stage.is-mobile .sec10-cols {
+  width: 100%;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+#stage.is-mobile .sec10-heading {
+  font-size: 42px;
+  letter-spacing: 0.2em;
+  margin-bottom: 4px;
+}
+
+#stage.is-mobile .sec10-list {
+  font-size: 46px;
+  line-height: 1.2;
+  gap: 0;
+}
+
+#stage.is-mobile .sec10-list-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(4, auto);
+  column-gap: 40px;
+  row-gap: 0;
+}
+
+#stage.is-mobile .sec10-list a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 130px;
+  padding: 36px 0;
+}
+
+#stage.is-mobile .sec10-list a::after {
+  bottom: 30px;
+}
+
+#stage.is-mobile .sec10-plain {
+  display: inline-block;
+  padding: 8px 0;
+}
+
+#stage.is-mobile .sec10-pickup .sec10-list {
+  gap: 4px;
+}
+
+#stage.is-mobile .sec10-pickup-note {
+  margin-top: 8px;
+  font-size: 36px;
+  line-height: 1.25;
+}
+
+#stage.is-mobile .sec10-bottom {
+  position: static;
+  margin-top: 20px;
+  padding-top: 16px;
   flex-direction: column;
   align-items: flex-start;
-  gap: 4px;
-  font-size: 28px;
+  gap: 6px;
+  font-size: 34px;
   line-height: 1.22;
-  padding-top: 10px;
 }
 
 
@@ -2148,18 +2253,6 @@ body {
   border-top: 1.5px solid rgba(61, 18, 8, 0.25);
   z-index: 5;
 }
-#footer-band {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: var(--footer-h, 220px);
-  background: #240B05;
-  border-top: 1px solid rgba(255, 232, 216, 0.14);
-  opacity: 0;
-  z-index: 6;
-}
-.sec9-footer { background: transparent !important; border-top: none !important; }
 
 /* ===== Menu mesclado ao fundo (sem barra, sem sombra) ===== */
 #site-nav {
@@ -2213,18 +2306,6 @@ body {
 #stage.is-mobile .sec8-foot { font-size: 48px; line-height: 1.4; }
 #stage.is-mobile .sec8-foot a { display: inline-block; padding: 34px 0; }
 
-#stage.is-mobile .sec9-label { font-size: 38px; letter-spacing: 0.2em; }
-#stage.is-mobile .sec9-text { font-size: 50px; line-height: 1.36; }
-#stage.is-mobile .sec9-insta { font-size: 46px; padding: 30px 0 12px; }
-
-#stage.is-mobile .footer-tagline { font-size: 40px; line-height: 1.4; }
-#stage.is-mobile .footer-heading { font-size: 36px; letter-spacing: 0.2em; }
-#stage.is-mobile .footer-list { font-size: 42px; }
-#stage.is-mobile .footer-list a,
-#stage.is-mobile .footer-list .footer-plain,
-#stage.is-mobile .footer-list li { padding: 14px 0; }
-#stage.is-mobile .sec9-footer-bottom { font-size: 34px; }
-
 /* pontos de navegação: área de toque maior que o desenho */
 #stage.is-mobile .nav-dot { position: relative; }
 #stage.is-mobile .nav-dot::before { content: ""; position: absolute; inset: -30px -16px; }
@@ -2248,29 +2329,6 @@ body {
 /* Seção 8 (Parceiros): a frase final quebra linha em vez de vazar pela borda */
 #stage.is-mobile .sec8-foot { white-space: normal; max-width: 952px; }
 
-/* Seção 9 (Peça o seu): só o Delivery no bloco central (retirada e Instagram ficam no rodapé) */
-#stage.is-mobile .sec9-left { top: 130px; }
-#stage.is-mobile .sec9-title { font-size: 140px; }
-#stage.is-mobile .sec9-cols { top: 880px; grid-template-columns: 1fr; justify-items: center; text-align: center; max-width: 952px; }
-#stage.is-mobile .sec9-col:nth-child(2) { display: none; }
-#stage.is-mobile .sec9-visual { top: 640px; }
-#stage.is-mobile .sec9-elipse-back,
-#stage.is-mobile .sec9-elipse-front { width: 500px; height: 218px; margin-left: -250px; margin-top: -109px; }
-#stage.is-mobile .sec9-copo { top: -125px; width: 280px; height: 420px; margin-left: -140px; margin-top: -210px; }
-#stage.is-mobile .sec9-footer { height: 660px; }
-#stage.is-mobile .footer-nav { display: none; }
-
-/* Rodapé no mobile: compacto, cabe na altura sem invadir o bloco de pedido */
-#stage.is-mobile .sec9-footer { height: 620px; padding: 26px 64px 84px; }
-#stage.is-mobile .footer-tagline { display: none; }
-#stage.is-mobile .footer-logo { height: 58px; }
-#stage.is-mobile .footer-list li,
-#stage.is-mobile .footer-list a,
-#stage.is-mobile .footer-list .footer-plain { padding: 6px 0; }
-#stage.is-mobile .sec9-footer-grid { gap: 10px 36px; }
-#stage.is-mobile .sec9-cols { top: 770px; }
-#stage.is-mobile .sec9-footer { height: 700px; }
-
 /* MOBILE v2: rótulos mais legíveis em celulares pequenos (360 px) e alvos de toque de 44 px */
 #stage.is-mobile .pudim-eyebrow,
 #stage.is-mobile .sec-eyebrow,
@@ -2281,19 +2339,7 @@ body {
 #stage.is-mobile .counter-total { font-size: 44px; }
 #stage.is-mobile .sec6-tag { font-size: 40px; letter-spacing: 0.1em; }
 #stage.is-mobile .sec5-note { font-size: 46px; }
-#stage.is-mobile .footer-heading { font-size: 42px; }
-#stage.is-mobile .footer-list,
-#stage.is-mobile .footer-list a,
-#stage.is-mobile .footer-list .footer-plain,
-#stage.is-mobile .footer-pickup li,
-#stage.is-mobile .footer-pickup span { font-size: 46px; }
-#stage.is-mobile .sec9-footer-bottom,
-#stage.is-mobile .sec9-footer-bottom span { font-size: 38px; }
 #stage.is-mobile .sec8-foot a { padding: 44px 0; }
-
-/* Rodapé mobile: o WhatsApp já é o botão logo acima; ficam o Instagram (alvo de toque de 44 px) e a retirada */
-#stage.is-mobile .footer-orders .footer-list li:nth-child(-n+2) { display: none; }
-#stage.is-mobile .footer-orders .footer-list a { display: block; padding: 32px 0; }
 
 /* MOBILE v3 (ajustes do Nycolas) */
 /* hero: logo 50% maior (440 -> 660 px) e colada mais ao topo; o resto do bloco não desce */
@@ -2308,3 +2354,77 @@ body {
 #stage.is-mobile .hero-logo { margin-bottom: 8px; }
 #stage.is-mobile .hero-title { margin-bottom: 10px; }
 #stage.is-mobile .hero-sub { line-height: 1.3; }
+
+
+/* ===== Botão flutuante do WhatsApp (sempre visível, canto inferior direito) ===== */
+.whats-float {
+  position: fixed;
+  right: max(20px, env(safe-area-inset-right, 0px));
+  bottom: max(20px, env(safe-area-inset-bottom, 0px));
+  z-index: 150;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+.whats-ico {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #128C7E;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 10px 26px rgba(18, 140, 126, 0.35), 0 4px 10px rgba(36, 11, 5, 0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.whats-ico::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid #128C7E;
+  opacity: 0;
+  animation: whatsPulse 3.2s ease-out infinite;
+}
+@keyframes whatsPulse { 0% { transform: scale(1); opacity: 0.55; } 70%, 100% { transform: scale(1.55); opacity: 0; } }
+.whats-label {
+  background: #3D1208;
+  color: #FFE8D8;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 15px;
+  white-space: nowrap;
+  padding: 12px 18px;
+  border-radius: 999px;
+  opacity: 0;
+  transform: translateX(10px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.whats-float:hover .whats-ico, .whats-float:focus-visible .whats-ico { transform: scale(1.06); }
+.whats-float:hover .whats-label, .whats-float:focus-visible .whats-label { opacity: 1; transform: none; }
+.whats-float:focus-visible { outline: 3px solid #FFE8D8; outline-offset: 4px; border-radius: 999px; }
+#viewport.is-mobile .whats-float { right: max(16px, env(safe-area-inset-right, 0px)); bottom: max(16px, env(safe-area-inset-bottom, 0px)); }
+#viewport.is-mobile .whats-ico { width: 58px; height: 58px; }
+#viewport.is-mobile .whats-label { display: none; }
+@media (prefers-reduced-motion: reduce) { .whats-ico::after { animation: none; } }
+
+/* ===== Desempenho/acessibilidade ===== */
+/* seções inativas ficam invisíveis desde o início: evita o deslocamento de layout (CLS) enquanto o JS monta o conteúdo */
+#sec-pudim, #sec-carrossel, .extra-sec { visibility: hidden; }
+/* pontos de navegação: área de toque de 24 px ou mais em qualquer tela */
+#nav-dots .nav-dot { position: relative; }
+#nav-dots .nav-dot::before { content: ""; position: absolute; inset: -9px -14px; }
+
+/* texto só para leitores de tela e buscadores */
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+/* WhatsApp: telas pequenas ganham botão menor e o rodapé reserva espaço para ele */
+.sec10-bottom span { padding-right: 84px; }
+@media (max-width: 400px), (max-height: 700px) {
+  #viewport.is-mobile .whats-float { right: 10px; bottom: 10px; }
+  #viewport.is-mobile .whats-ico { width: 48px; height: 48px; }
+  #viewport.is-mobile .whats-ico svg { width: 26px; height: 26px; }
+}

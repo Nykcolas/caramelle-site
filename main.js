@@ -2,8 +2,8 @@
 (function () {
   "use strict";
 
-  const TOTAL_DURATION = 28;
-  const STEPS = [2.0, 4.0, 6.0, 8.0, 10.0, 12.0, 14.0, 16.0, 18.0, 20.0, 22.0, 24.0, 26.0, 28.0];
+  const TOTAL_DURATION = 30;
+  const STEPS = [2.0, 4.0, 6.0, 8.0, 10.0, 12.0, 14.0, 16.0, 18.0, 20.0, 22.0, 24.0, 26.0, 28.0, 30.0];
   const STEP_LOCK_MS = 1200;
 
   // Cor sólida de fundo do #viewport por passo (para eliminar letterbox escuro)
@@ -21,28 +21,30 @@
     "#FFE8D8", // step 10: depoimentos
     "#F9DCC6", // step 11: quem somos
     "#FFE8D8", // step 12: parceiros
-    "#3D1208"  // step 13: peça o seu
+    "#3D1208", // step 13: peça o seu
+    "#240B05"  // step 14: rodapé
   ];
 
   // Menu MESCLADO ao fundo (sem barra): só o texto/logo mudam por passo para manter o contraste.
   // fg = cor do texto; logoDark = 1 usa a logo laranja, 0 usa a logo creme; logoFilter escurece a logo laranja (fundo caramelo)
   const NAV_TONES = [
-    { fg: "#3D1208", cta: "#DE6E18", ctaFg: "#FFE8D8", logoDark: 1, logoFilter: "brightness(1)" }, // 0 hero
-    { fg: "#3D1208", cta: "#DE6E18", ctaFg: "#FFE8D8", logoDark: 1, logoFilter: "brightness(1)" }, // 1
+    { fg: "#3D1208", cta: "#AE4C0D", ctaFg: "#FFE8D8", logoDark: 1, logoFilter: "brightness(1)" }, // 0 hero
+    { fg: "#3D1208", cta: "#AE4C0D", ctaFg: "#FFE8D8", logoDark: 1, logoFilter: "brightness(1)" }, // 1
     { fg: "#FFE8D8", cta: "#3D1208", ctaFg: "#FFE8D8", logoDark: 0, logoFilter: "brightness(1)" }, // 2 laranja
-    { fg: "#FFE8D8", cta: "#DE6E18", ctaFg: "#FFE8D8", logoDark: 0, logoFilter: "brightness(1)" }, // 3 café
+    { fg: "#FFE8D8", cta: "#AE4C0D", ctaFg: "#FFE8D8", logoDark: 0, logoFilter: "brightness(1)" }, // 3 café
     { fg: "#3D1208", cta: "#3D1208", ctaFg: "#FFE8D8", logoDark: 1, logoFilter: "brightness(0.28)" }, // 4 duo (caramelo)
-    { fg: "#FFE8D8", cta: "#DE6E18", ctaFg: "#FFE8D8", logoDark: 0, logoFilter: "brightness(1)" }, // 5 morango
-    { fg: "#FFE8D8", cta: "#DE6E18", ctaFg: "#FFE8D8", logoDark: 0, logoFilter: "brightness(1)" }, // 6 nutella
-    { fg: "#3D1208", cta: "#DE6E18", ctaFg: "#FFE8D8", logoDark: 1, logoFilter: "brightness(1)" }, // 7 cocada
-    { fg: "#3D1208", cta: "#DE6E18", ctaFg: "#FFE8D8", logoDark: 1, logoFilter: "brightness(1)" }, // 8
-    { fg: "#3D1208", cta: "#DE6E18", ctaFg: "#FFE8D8", logoDark: 1, logoFilter: "brightness(1)" }, // 9
-    { fg: "#3D1208", cta: "#DE6E18", ctaFg: "#FFE8D8", logoDark: 1, logoFilter: "brightness(1)" }, // 10
-    { fg: "#3D1208", cta: "#DE6E18", ctaFg: "#FFE8D8", logoDark: 1, logoFilter: "brightness(1)" }, // 11
-    { fg: "#3D1208", cta: "#DE6E18", ctaFg: "#FFE8D8", logoDark: 1, logoFilter: "brightness(1)" }, // 12
-    { fg: "#FFE8D8", cta: "#DE6E18", ctaFg: "#FFE8D8", logoDark: 0, logoFilter: "brightness(1)" }  // 13
+    { fg: "#FFE8D8", cta: "#AE4C0D", ctaFg: "#FFE8D8", logoDark: 0, logoFilter: "brightness(1)" }, // 5 morango
+    { fg: "#FFE8D8", cta: "#AE4C0D", ctaFg: "#FFE8D8", logoDark: 0, logoFilter: "brightness(1)" }, // 6 nutella
+    { fg: "#3D1208", cta: "#AE4C0D", ctaFg: "#FFE8D8", logoDark: 1, logoFilter: "brightness(1)" }, // 7 cocada
+    { fg: "#3D1208", cta: "#AE4C0D", ctaFg: "#FFE8D8", logoDark: 1, logoFilter: "brightness(1)" }, // 8
+    { fg: "#3D1208", cta: "#AE4C0D", ctaFg: "#FFE8D8", logoDark: 1, logoFilter: "brightness(1)" }, // 9
+    { fg: "#3D1208", cta: "#AE4C0D", ctaFg: "#FFE8D8", logoDark: 1, logoFilter: "brightness(1)" }, // 10
+    { fg: "#3D1208", cta: "#AE4C0D", ctaFg: "#FFE8D8", logoDark: 1, logoFilter: "brightness(1)" }, // 11
+    { fg: "#3D1208", cta: "#AE4C0D", ctaFg: "#FFE8D8", logoDark: 1, logoFilter: "brightness(1)" }, // 12
+    { fg: "#FFE8D8", cta: "#AE4C0D", ctaFg: "#FFE8D8", logoDark: 0, logoFilter: "brightness(1)" }, // 13
+    { fg: "#FFE8D8", cta: "#AE4C0D", ctaFg: "#FFE8D8", logoDark: 0, logoFilter: "brightness(1)" }  // 14
   ];
-  const CREME_BAR_STEPS = new Set([2, 3, 5, 6, 13]); // passos em que o menu usa texto creme
+  const CREME_BAR_STEPS = new Set([2, 3, 5, 6, 13, 14]); // passos em que o menu usa texto creme
 
   let builtDiag = 0; // diagonal da janela usada na última construção da timeline
   const params = new URLSearchParams(window.location.search);
@@ -100,7 +102,7 @@
       desktopSize: 470,
       mobileSize: 340,
       darkBg: true,
-      ctaBg: "#DE6E18",
+      ctaBg: "#AE4C0D",
       ctaColor: "#FFE8D8",
       edicao: "EDIÇÃO FIXA",
       sub: "Intenso na medida, cremoso e viciante.",
@@ -166,7 +168,7 @@
       desktopSize: 390,
       mobileSize: 270,
       darkBg: true,
-      ctaBg: "#DE6E18",
+      ctaBg: "#AE4C0D",
       ctaColor: "#FFE8D8",
       edicao: "EDIÇÃO FIXA",
       sub: "Muita Nutella. Sem miséria.",
@@ -249,8 +251,8 @@
   const navDotsWrap = document.getElementById("nav-dots");
   const navDots = gsap.utils.toArray(".nav-dot");
 
-  // Referências das seções 4 a 9
-  const bgSecs = [4, 5, 6, 7, 8, 9].map((n) => document.getElementById("bg-sec-" + n));
+  // Referências das seções 4 a 10
+  const bgSecs = [4, 5, 6, 7, 8, 9, 10].map((n) => document.getElementById("bg-sec-" + n));
   const sec4 = document.getElementById("sec-4");
   const s4HeadEls = gsap.utils.toArray("#sec-4 .sec-eyebrow, #sec-4 .sec-title");
   const s4CopoInner = document.querySelector(".sec4-copo-inner");
@@ -285,12 +287,16 @@
   const sec9 = document.getElementById("sec-9");
   const s9TitleParts = gsap.utils.toArray(".sec9-tpart");
   const s9Cols = gsap.utils.toArray(".sec9-col");
-  const s9Footer = document.querySelector(".sec9-footer");
-  const footerBand = document.getElementById("footer-band");
   const s9ElipseBack = document.querySelector(".sec9-elipse-back");
   const s9ElipseFront = document.querySelector(".sec9-elipse-front");
   const s9Copo = document.querySelector(".sec9-copo");
   const s9CopoMouse = document.querySelector(".sec9-copo-mouse");
+
+  const sec10 = document.getElementById("sec-10");
+  const s10Giant = document.querySelector(".sec10-giant");
+  const s10Brand = document.querySelector(".sec10-brand");
+  const s10Cols = gsap.utils.toArray("#sec-10 .sec10-col");
+  const s10Bottom = document.querySelector(".sec10-bottom");
 
   s7Paragraphs.forEach((p) => {
     p.dataset.rawHtml = p.innerHTML;
@@ -496,15 +502,10 @@
     const s = Math.min(availW / L.w, availH / L.h);
     stage.style.top = (navH + availH / 2) + "px";
     stage.style.transform = "scale(" + s + ")";
-    // Camada de fundos: faixa xadrez do hero e base do rodapé acompanham a escala do palco
-    const stageBottom = navH + availH / 2 + (L.h * s) / 2;
-    const extra = Math.max(0, window.innerHeight - stageBottom);
+    // Camada de fundos: faixa xadrez do hero acompanha a escala do palco
     const stripStage = isMobile ? 52 : 64;
-    const footEl = document.querySelector(".sec9-footer");
-    const footStage = footEl ? footEl.offsetHeight : (isMobile ? 600 : 220); // altura REAL do rodapé (unidades do palco)
     viewport.style.setProperty("--strip-h", (stripStage * s) + "px");
     viewport.style.setProperty("--strip-bottom", "0px"); // faixa colada na base da janela
-    viewport.style.setProperty("--footer-h", (footStage * s + extra) + "px");
     const pv = document.getElementById("xadrez-pat-v");
     if (pv) pv.setAttribute("patternTransform", "scale(" + s + ")");
   }
@@ -795,6 +796,7 @@
   function getNavGroup(step) {
     if (step >= 2 && step <= 7) return 2;
     if (step >= 8 && step <= 9) return 8;
+    if (step >= 13) return 13;
     return step;
   }
 
@@ -808,7 +810,7 @@
     }
     // Passos com fundo escuro usam pontos creme; fundos claros usam chocolate
     const isLightNav =
-      activeStep === 13 ||
+      activeStep >= 13 ||
       (activeStep >= 2 && activeStep <= 7 && FLAVORS[activeStep - 2].darkBg);
     navDotsWrap.classList.toggle("is-light-nav", isLightNav);
     siteNav.classList.toggle("is-creme-bar", CREME_BAR_STEPS.has(activeStep));
@@ -828,7 +830,7 @@
   }
 
   // =========================================================================
-  // CONSTRUÇÃO DA TIMELINE MESTRA PAUSADA (0 a 28s)
+  // CONSTRUÇÃO DA TIMELINE MESTRA PAUSADA (0 a 30s)
   // =========================================================================
   let tl = null;
 
@@ -897,9 +899,9 @@
     gsap.set(saborUi, { autoAlpha: 0 });
     gsap.set(saborCta, { backgroundColor: FLAVORS[0].ctaBg, color: FLAVORS[0].ctaColor });
 
-    // Estados iniciais das seções 4 a 9
+    // Estados iniciais das seções 4 a 10
     bgSecs.forEach((el) => gsap.set(el, { clipPath: `circle(0px at 50% 52%)` }));
-    gsap.set([sec4, sec5, sec6, sec7, sec8, sec9], { autoAlpha: 0 });
+    gsap.set([sec4, sec5, sec6, sec7, sec8, sec9, sec10], { autoAlpha: 0 });
 
     gsap.set(s4HeadEls, { y: 24, opacity: 0 });
     gsap.set(s4CopoInner, { y: 40, scale: 0.92, rotation: -10, opacity: 0 });
@@ -937,10 +939,11 @@
 
     gsap.set(s9TitleParts, { y: 36, scale: 0.92, opacity: 0 });
     gsap.set(s9Cols, { y: 22, opacity: 0 });
-    gsap.set(s9Footer, { y: 28, opacity: 0 });
-    gsap.set(footerBand, { opacity: 0 });
     gsap.set([s9ElipseBack, s9ElipseFront], { rotation: -8, scale: 0.2, opacity: 0 });
     gsap.set(s9Copo, { y: 180, rotation: 0, scale: 0.7, opacity: 0 });
+
+    gsap.set(s10Giant, { y: 24, opacity: 0 });
+    gsap.set([s10Brand, ...s10Cols, s10Bottom], { y: 24, opacity: 0 });
 
     flavorDom.forEach((dom, idx) => {
       gsap.set(dom.bgEl, { clipPath: `circle(0px at 50% 52%)` });
@@ -1044,7 +1047,7 @@
           .to([curr.edicao, curr.sub, curr.counter], { opacity: 1, y: 0, scale: 1, duration: 0.3 }, t0 + 0.2);
       }
 
-      // Passos 8 a 13 (16 -> 28) em prefers-reduced-motion
+      // Passos 8 a 14 (16 -> 30) em prefers-reduced-motion
       const cocadaDom = flavorDom[5];
       tl.to([cocadaDom.giant, cocadaDom.edicao, cocadaDom.sub, cocadaDom.counter, cocadaDom.cupObj.outer, copoShadow], { opacity: 0, duration: 0.3 }, 16.0)
         .set(saborUi, { autoAlpha: 0 }, 16.35)
@@ -1080,8 +1083,14 @@
         .set(sec8, { autoAlpha: 0 }, 26.35)
         .to(bgSecs[5], { clipPath: `circle(${maxCircle}px at 50% 52%)`, duration: 0.3 }, 26.05)
         .set(sec9, { autoAlpha: 1 }, 26.15)
-        .to([s9TitleParts, s9Cols, s9Footer, s9ElipseBack, s9ElipseFront, footerBand], { y: 0, scale: 1, opacity: 1, duration: 0.3 }, 26.25)
+        .to([s9TitleParts, s9Cols, s9ElipseBack, s9ElipseFront], { y: 0, scale: 1, opacity: 1, duration: 0.3 }, 26.25)
         .to(s9Copo, { y: 0, rotation: 8, scale: 1, opacity: 1, duration: 0.3 }, 26.25);
+
+      tl.to([s9TitleParts, s9Cols, s9Copo, s9ElipseBack, s9ElipseFront], { opacity: 0, duration: 0.3 }, 28.0)
+        .set(sec9, { autoAlpha: 0 }, 28.35)
+        .to(bgSecs[6], { clipPath: `circle(${maxCircle}px at 50% 52%)`, duration: 0.3 }, 28.05)
+        .set(sec10, { autoAlpha: 1 }, 28.15)
+        .to([s10Giant, s10Brand, ...s10Cols, s10Bottom], { y: 0, opacity: 1, duration: 0.3 }, 28.25);
 
       tl.set({}, {}, TOTAL_DURATION);
       return;
@@ -1523,9 +1532,23 @@
       .to(s9TitleParts, { y: 0, scale: 1, opacity: 1, stagger: 0.12, duration: 0.56, ease: "back.out(1.4)" }, 26.32)
       .to(s9Cols, { y: 0, opacity: 1, duration: 0.52, ease: "power3.out" }, 26.58)
       .to([s9ElipseBack, s9ElipseFront], { scale: 1, opacity: 1, duration: 0.65, ease: "elastic.out(1, 0.6)" }, 26.38)
-      .to(s9Copo, { y: 0, rotation: 8, scale: 1, opacity: 1, duration: 0.78, ease: "back.out(1.4)" }, 26.52)
-      .to(s9Footer, { y: 0, opacity: 1, duration: 0.55, ease: "power3.out" }, 26.78)
-      .to(footerBand, { opacity: 1, duration: 0.55, ease: "power3.out" }, 26.78);
+      .to(s9Copo, { y: 0, rotation: 8, scale: 1, opacity: 1, duration: 0.78, ease: "back.out(1.4)" }, 26.52);
+
+    // -----------------------------------------------------------------------
+    // PASSO 14 (28.0 -> 30.0s): SEÇÃO 9 -> SEÇÃO 10 "RODAPÉ"
+    // -----------------------------------------------------------------------
+    tl.to([s9TitleParts, s9Cols], { y: -28, opacity: 0, duration: 0.42, ease: "power2.in" }, 28.0)
+      .to(s9Copo, { y: 120, scale: 0.85, opacity: 0, duration: 0.42, ease: "power2.in" }, 28.0)
+      .to([s9ElipseBack, s9ElipseFront], { scale: 0.4, opacity: 0, duration: 0.42, ease: "power2.in" }, 28.0)
+      .set(sec9, { autoAlpha: 0 }, 28.52)
+      .to(
+        bgSecs[6],
+        { clipPath: `circle(${maxCircle}px at 50% 52%)`, duration: 1.1, ease: "power2.inOut" },
+        28.05
+      )
+      .set(sec10, { autoAlpha: 1 }, 28.22)
+      .to(s10Giant, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, 28.28)
+      .to([s10Brand, ...s10Cols, s10Bottom], { y: 0, opacity: 1, stagger: 0.1, duration: 0.5, ease: "power3.out" }, 28.32);
 
     tl.set({}, {}, TOTAL_DURATION);
   }
@@ -1557,9 +1580,18 @@
     return clamped;
   };
 
+  // Endereços por seção (links compartilháveis): /#sabores, /#depoimentos...
+  const STEP_SLUGS = ["inicio", "o-pudim", "sabores", "sabor-cafe", "sabor-duo", "sabor-morango", "sabor-nutella", "sabor-cocada", "tamanhos", "edicao-limitada", "depoimentos", "quem-somos", "parceiros", "peca-o-seu", "rodape"];
+  function slugToStep() { return STEP_SLUGS.indexOf((location.hash || "").replace("#", "")); }
+  function writeHash(idx) {
+    if (IS_RENDER || !window.history || !history.replaceState) return;
+    try { history.replaceState(null, "", idx === 0 ? location.pathname + location.search : "#" + STEP_SLUGS[idx]); } catch (e) {}
+  }
+
   window.goStep = function (n) {
     const targetIdx = Math.max(0, Math.min(STEPS.length - 1, Math.round(n)));
     currentStep = targetIdx;
+    writeHash(targetIdx);
     const targetTime = STEPS[targetIdx];
     const delta = Math.abs(targetTime - tl.time());
 
@@ -1773,12 +1805,27 @@
     applyIdle();
     applyMouseParallax();
     syncUI(0);
-    if (window.__preloaderActive) {
-      window.addEventListener("preloader:reveal", function () {
+    // abre direto na seção do endereço (#sabores...) ou no início
+    const startFromHash = function () {
+      const idx = slugToStep();
+      if (idx > 0) {
+        currentStep = idx;
+        tl.time(STEPS[idx], false);
+        applyIdle();
+        applyMouseParallax();
+        syncUI(STEPS[idx]);
+      } else {
         window.goStep(0);
-      }, { once: true });
+      }
+    };
+    window.addEventListener("hashchange", function () {
+      const idx = slugToStep();
+      if (idx >= 0 && idx !== currentStep && !window.__preloaderActive) window.goStep(idx);
+    });
+    if (window.__preloaderActive) {
+      window.addEventListener("preloader:reveal", startFromHash, { once: true });
     } else {
-      window.goStep(0);
+      startFromHash();
     }
   }
 })();
