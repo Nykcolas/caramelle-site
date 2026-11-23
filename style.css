@@ -2413,7 +2413,7 @@ body {
 
 /* ===== Desempenho/acessibilidade ===== */
 /* seções inativas ficam invisíveis desde o início: evita o deslocamento de layout (CLS) enquanto o JS monta o conteúdo */
-#sec-pudim, #sec-carrossel, .extra-sec { visibility: hidden; }
+#sec-pudim, .extra-sec { visibility: hidden; }
 /* pontos de navegação: área de toque de 24 px ou mais em qualquer tela */
 #nav-dots .nav-dot { position: relative; }
 #nav-dots .nav-dot::before { content: ""; position: absolute; inset: -9px -14px; }
