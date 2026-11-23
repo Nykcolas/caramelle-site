@@ -2294,3 +2294,17 @@ body {
 /* Rodapé mobile: o WhatsApp já é o botão logo acima; ficam o Instagram (alvo de toque de 44 px) e a retirada */
 #stage.is-mobile .footer-orders .footer-list li:nth-child(-n+2) { display: none; }
 #stage.is-mobile .footer-orders .footer-list a { display: block; padding: 32px 0; }
+
+/* MOBILE v3 (ajustes do Nycolas) */
+/* hero: logo 50% maior (440 -> 660 px) e colada mais ao topo; o resto do bloco não desce */
+#stage.is-mobile #hero-content { top: 30px; }
+#stage.is-mobile .hero-logo { width: 660px; margin-bottom: 18px; }
+/* seção "Feito à mão": tudo mais para cima, longe dos pontos de navegação da base */
+#stage.is-mobile #pudim-content { top: 80px; }
+#stage.is-mobile .pudim-body { top: 1135px; }
+/* etiqueta dos depoimentos: bem menor que o texto */
+#stage.is-mobile .sec6-tag { font-size: 32px; letter-spacing: 0.08em; }
+/* hero mobile: bloco de texto mais compacto para o botão não encostar no copo */
+#stage.is-mobile .hero-logo { margin-bottom: 8px; }
+#stage.is-mobile .hero-title { margin-bottom: 10px; }
+#stage.is-mobile .hero-sub { line-height: 1.3; }

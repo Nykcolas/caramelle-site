@@ -442,9 +442,9 @@
         portalY: 1570,
         portalRot: -30,
         pudimCupX: 540,
-        pudimCupY: 960,
+        pudimCupY: 835,
         pudimCupScale: 1.18,
-        pudimShadowY: 1365,
+        pudimShadowY: 1240,
         carCupX: 540,
         carCupY: 1000,
         carCupWideY: 970,
@@ -559,10 +559,10 @@
 
   // Flutuantes da Seção 2 ("O pudim" — gota-calda e colher)
   const pudimFloatSpecs = [
-    { img: "gota-calda.webp", layer: "mid", dx: 470, dy: 250, mx: 150, my: 590, size: 118, mSize: 84, rot: -15, ampY: 10, ampR: 5, freq: 1.5, phase: 0.3 },
-    { img: "colher.webp", layer: "mid", dx: 950, dy: 250, mx: 920, my: 620, size: 170, mSize: 118, rot: 22, ampY: 9, ampR: 7, freq: 1.35, phase: 1.4 },
-    { img: "gota-calda.webp", layer: "mid", dx: 455, dy: 635, mx: 155, my: 1110, size: 138, mSize: 96, rot: 14, ampY: 11, ampR: -6, freq: 1.6, phase: 2.5 },
-    { img: "gota-calda.webp", layer: "mid", dx: 960, dy: 730, mx: 925, my: 1095, size: 105, mSize: 78, rot: -12, ampY: 8, ampR: 8, freq: 1.7, phase: 3.7 }
+    { img: "gota-calda.webp", layer: "mid", dx: 470, dy: 250, mx: 150, my: 465, size: 118, mSize: 84, rot: -15, ampY: 10, ampR: 5, freq: 1.5, phase: 0.3 },
+    { img: "colher.webp", layer: "mid", dx: 950, dy: 250, mx: 920, my: 495, size: 170, mSize: 118, rot: 22, ampY: 9, ampR: 7, freq: 1.35, phase: 1.4 },
+    { img: "gota-calda.webp", layer: "mid", dx: 455, dy: 635, mx: 155, my: 985, size: 138, mSize: 96, rot: 14, ampY: 11, ampR: -6, freq: 1.6, phase: 2.5 },
+    { img: "gota-calda.webp", layer: "mid", dx: 960, dy: 730, mx: 925, my: 970, size: 105, mSize: 78, rot: -12, ampY: 8, ampR: 8, freq: 1.7, phase: 3.7 }
   ];
 
   const pudimFloatItems = createSectionFloats(pudimFloatsWrap, pudimFloatSpecs);
